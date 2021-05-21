@@ -1,4 +1,6 @@
-GET http://localhost:4000/api/pokemon
+GET http://localhost:4000/api/moodflix
 
-###
-GET http://localhost:4000/api/pokemon/1
+
+### TMDb movie request
+GET https://api.themoviedb.org/3/movie/top_rated?api_key=fa2b36d3b86ff09ac3e60361164f8199&language=en-US&page=2&size=200
+
