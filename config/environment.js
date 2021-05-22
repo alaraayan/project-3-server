@@ -2,7 +2,6 @@
 
 // ? Here is my database URL:
 // ? Luckily I don't need the port number! I can do this..
-export const dbURL = 'mongodb://localhost/pokemondb'
+export const dbURL = 'mongodb://localhost/mmoodflixdb'
 
-// ? A SECRET STRING FOR JWT
-export const secret = 'horsebatterystapleredbaloon'
+export const secret = 'stringofrandomwords'

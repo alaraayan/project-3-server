@@ -6,12 +6,12 @@ export default [
     passwordConfirmation: 'password',
     isAdmin: true,
   },
-  // {
-  //   username: 'Alara',
-  //   email: 'alara@email.com',
-  //   password: 'password',
-  //   isAdmin: true,
-  // },
+  {
+    username: 'Alara',
+    email: 'alara@email.com',
+    password: 'password',
+    isAdmin: true,
+  },
   {
     username: 'Rizwan',
     email: 'rizwan@email.com',
