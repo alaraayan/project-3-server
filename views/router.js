@@ -1,11 +1,23 @@
-// ? This is our routes(views)
-
 import express from 'express'
-// ! import our controllers
-// ! import our secureRoute.js
+import userController from '../controllers/user.js'
+
 
 const router = express.Router()
 
+
+
+
+
+// ! User routes
+
+// * Register 
+router.route('/register')
+  .post(userController.register)
+
+
+// * Login
+router.route('/login')
+  .post(userController.login)
 
 
 export default router

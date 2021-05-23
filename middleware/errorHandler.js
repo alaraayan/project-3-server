@@ -2,7 +2,7 @@
 
 // ? Error handling has an additional first arg, for the error
 export default function errorHandler(err, req, res, next) {
-  console.log('🤖 There was an error.')
+  console.log('🔥There was an error🔥')
   console.log(err.name)
   console.log(err)
 

@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 import connectToDb from './connectToDb.js'
+
 // ? import the models
 import User from '../models/user.js'
 import Movie from '../models/movie.js'
@@ -17,11 +18,11 @@ async function seedDatabase() {
   try {
     // waiting for the connection to mongoDB
     await connectToDb()
-    console.log('Successfully connected to mongo')
+    console.log('Connected to mongo')
 
     // clear the database every time it's seeded
     await mongoose.connection.db.dropDatabase()
-
+    console.log('Removed everything')
 
     // taking the data from movies.json, using fs.readFileSync and parsing it to JS
     const seedDataBuffer = fs.readFileSync('./db/data/movies.json')
@@ -31,15 +32,18 @@ async function seedDatabase() {
   
 
 
+    // Seed with users
+    const users = await User.create(userData)
+    console.log(`${users.length} new users created!`)
+    console.log(users)
 
     await mongoose.connection.close()
     console.log('🤖 Disconnected from mongo. All done!')
-
   } catch (e) {
-    console.log('🤖 Something went wrong')
+    console.log('🔥there is an error with seeding🔥')
     console.log(e)
     await mongoose.connection.close()
   }
-
 }
+
 seedDatabase()

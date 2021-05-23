@@ -1,17 +1,16 @@
 import mongoose from 'mongoose'
 import { dbURL } from '../config/environment.js'
 
-// Do the connecting
-export default function connectToDb() {
-//giving mongoose some options that we don't really care about
-// they remove the warnings
+function connectToDb() {
   const options = {
-    newUserParser: true,
-    useCreate: true,
+    useNewUrlParser: true,
+    useCreateIndex: true,
     useUnifiedTopology: true,
+    useFindAndModify: false,
   }
-  // This is a really important line:
-  // mongoose.connect returns a PROMISE
-  return mongoose.connect(dbURL, options)
 
+  return mongoose.connect(dbURL, options)
 }
+
+
+export default  connectToDb

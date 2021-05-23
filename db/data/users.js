@@ -10,7 +10,6 @@ export default [
     username: 'Alara',
     email: 'alara@email.com',
     password: 'password',
-    passwordConfirmation: 'password',
     isAdmin: true,
   },
   {
@@ -19,5 +18,13 @@ export default [
     password: 'password',
     passwordConfirmation: 'password',
     isAdmin: true,
+  },
+  {
+    username: 'admin',
+    email: 'admin@email.com',
+    password: 'password',
+    passwordConfirmation: 'password',
+    isAdmin: true,
   }
+  
 ]
