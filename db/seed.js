@@ -30,10 +30,7 @@ async function seedDatabase() {
     console.log(`🤖 ${movies.length} movies added to the database!`)
   
 
-    // Seed with users
-    const users = await User.create(userData)
-    console.log(`🤖 ${users.length} users created!`)
-    console.log(users)
+
 
     await mongoose.connection.close()
     console.log('🤖 Disconnected from mongo. All done!')
