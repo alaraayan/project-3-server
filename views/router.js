@@ -10,9 +10,13 @@ const router = express.Router()
 router.route('/movies')
   .get(movieController.index)
   .post(secureRoute, movieController.create)
-
+  
+router.route('/movies/search')
+  .get(movieController.search)
+    
 router.route('/movies/:id')
   .get(movieController.show)
+
 
 // ! User routes
 

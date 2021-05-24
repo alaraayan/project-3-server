@@ -50,9 +50,30 @@ async function create(req, res, next) {
 
 //* GET ALL MOVIES WITH SAME MOOD
 
+
 //* SEARCH A MOOD
 
-//*SEARCH A MOVIE
+//* SEARCH A MOVIE
+async function search(req, res, next) {
+  try {
+    // above makes the search query 'partial' and case insensitive
+    const searchParams = { 
+      ...req.query, 
+      title: new RegExp(req.query.title, 'i'),
+      director: new RegExp(req.query.director, 'i'),
+      genres: new RegExp(req.query.genres, 'i'),
+      actors: new RegExp(req.query.actors, 'i'),
+      language: new RegExp(req.query.language, 'i'),
+      plot: new RegExp(req.query.plot, 'i'),
+    } 
+
+    const movieList = await Movie.find(searchParams)
+    console.log(searchParams)
+    res.status(200).json(movieList)
+  } catch (e) {
+    next(e)
+  }
+}
 
 
 
@@ -65,4 +86,5 @@ export default {
   index,
   create,
   show,
+  search,
 }

@@ -45,7 +45,8 @@ content-type: application/json
 
 ### ADD A MOVIE
 
-### 
+### SEARCH FOR A MOVIE
+GET http://localhost:4000/api/movies/search?moods=uplifting
 
 
 ###
