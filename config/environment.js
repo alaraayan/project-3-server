@@ -2,6 +2,6 @@
 
 // ? Here is my database URL:
 // ? Luckily I don't need the port number! I can do this..
-export const dbURL = 'mongodb://localhost/mmoodflixdb'
+export const dbURL = 'mongodb://localhost/moodflixdb'
 
 export const secret = 'stringofrandomwords'

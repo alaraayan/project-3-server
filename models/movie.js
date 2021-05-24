@@ -29,9 +29,10 @@ const movieSchema = mongoose.Schema({
   language: { type: [String], required: true },
   poster: { type: String, required: true },
   ratings: [ratingsSchema],
-  moods: { type: [String], required: true },
+  moods: [movieMoodSchema],
+  //moods: { type: [String], required: true },
 })
-//console.log(movieMoodSchema)
+
 
 
 export default mongoose.model('Movie', movieSchema)

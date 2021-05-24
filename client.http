@@ -1,8 +1,6 @@
-GET http://localhost:4000/api/moodflix
+GET http://localhost:4000/api/
 
 
-### TMDb movie request
-GET https://api.themoviedb.org/3/movie/top_rated?api_key=fa2b36d3b86ff09ac3e60361164f8199&language=en-US&page=2&size=200
 
 ###
 //* USER - REGISTER 
@@ -22,6 +20,6 @@ POST http://localhost:4000/api/login
 content-type: application/json
 
 {
-  "email": "test@test8.com",
-  "password": "test8"
+  "email": "test@test11.com",
+  "password": "test11"
 } 

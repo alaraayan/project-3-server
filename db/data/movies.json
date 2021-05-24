@@ -33,7 +33,7 @@
       { "source": "Rotten Tomatoes", "value": "95%" },
       { "source": "Metacritic", "value": "85/100" }
     ],
-    "moods": ["action-packed", "exhilirating"]
+    "moods": ["action-packed", "exhilarating"]
   },
   {
     "title": "The Shawshank Redemption",
@@ -159,7 +159,7 @@
       { "source": "Rotten Tomatoes", "value": "100%" },
       { "source": "Metacritic", "value": "67/100" }
     ],
-    "moods": ["uplifting", "inspiring/motivational"]
+    "moods": ["uplifting", "inspiring"]
   },
   {
     "title": "Toy Story 3",
