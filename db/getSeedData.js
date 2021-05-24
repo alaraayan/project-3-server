@@ -1,5 +1,4 @@
 import axios from 'axios'
-import fs from 'fs'
 
 import initialSeedData from './lib/moviesWithMoods.js'
 
@@ -27,7 +26,7 @@ async function getSeedData() {
     director: format(film.Director),
     actors: format(film.Actors),
     plot: film.Plot,
-    language: film.Language,
+    language: format(film.Language),
     poster: film.Poster,
     ratings: film.Ratings.map(rating => ({
       source: rating.Source,
@@ -36,7 +35,9 @@ async function getSeedData() {
     moods: film.moods,
   }))
 
-  fs.writeFileSync('./db/data/movies.json', JSON.stringify(mappedFilms))
+  //fs.writeFileSync('./db/data/movies.json', JSON.stringify(mappedFilms))
+  console.log(mappedFilms)
+  return mappedFilms
 }
 
-getSeedData()
+export default getSeedData

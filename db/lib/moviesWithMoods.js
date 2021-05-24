@@ -5,7 +5,7 @@ export default [
   },
   {
     'imdb': 'tt0082971',
-    'moods': ['action-packed', 'exhilirating'],
+    'moods': ['action-packed', 'exhilarating'],
   },
   
   // Rizwan films
@@ -35,7 +35,7 @@ export default [
   },
   {	
     'imdb': 'tt1187043',
-    'moods': ['uplifting','inspiring/motivational'],
+    'moods': ['uplifting','inspiring'],
   },
   {	
     'imdb': 'tt0435761',

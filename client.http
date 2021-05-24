@@ -1,4 +1,6 @@
-GET http://localhost:4000/api/
+@id = 60ab96f270b92517e61d86bc
+
+GET http://localhost:4000/api/{{id}}
 
 
 

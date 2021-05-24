@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 import connectToDb from './connectToDb.js'
+import getSeedData from './getSeedData.js'
 
 // ? import the models
 import User from '../models/user.js'
@@ -8,13 +9,7 @@ import Mood from '../models/moods.js'
 
 // ? import the data
 import userData from './data/users.js'
-
-// ? import fs (file system) from node.js
-import fs from 'fs'
-
 import moodsData from './data/moods.js'
-
-
 
 
 async function seedDatabase() {
@@ -34,20 +29,19 @@ async function seedDatabase() {
     console.log(users)
     
     const moodsList = await Mood.create(moodsData)
-    //console.log('I have the:', moodsList)
     
 
     // taking the data from movies.json, using fs.readFileSync and parsing it to JS
-    const seedDataBuffer = fs.readFileSync('./db/data/movies.json')
-    const seedData = JSON.parse(seedDataBuffer)
+    // const seedDataBuffer = fs.readFileSync('./db/data/movies.json')
+
+    const seedData = await getSeedData()
+    console.log(seedData)
     
     const adminUser = users.find(user => (user.username === 'admin'))
     const mappedSeedMovies = seedData.map((movie) => {
       const movieMoods = movie.moods.map(mood => {
         const matchedMood = moodsList.find(m => m.mood === mood)
-        if (matchedMood === undefined) {
-          console.log('This is the problem!:', mood)
-        }
+      
         return { 
           mood: matchedMood,
           user: adminUser,
@@ -58,7 +52,6 @@ async function seedDatabase() {
     
     const movies = await Movie.create(mappedSeedMovies)
     console.log(`🤖 ${movies.length} movies added to the database! 🍿`)
-    console.log(JSON.stringify(movies[0], null, 2))
 
     
     
