@@ -1,6 +1,34 @@
-@id = 60ab96f270b92517e61d86bc
+@id = 60abc62f0d7dfea00c83460c
 
-GET http://localhost:4000/api/{{id}}
+###
+//* get all 
+GET http://localhost:4000/api/movies
+
+###
+//* get one movie 
+GET http://localhost:4000/api/movies/{{id}}
+
+###
+//* POST A MOVIE
+POST http://localhost:4000/api/movies
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFiYzlhMWI2OTYzNmExYmY4OWUwOGEiLCJpYXQiOjE2MjE4NzEwMTgsImV4cCI6MTYyMTkxNDIxOH0.Hxehgbnoy36V5wKTxL20t-OHeWNKGgwU5Fmi9keIlgw
+content-type: application/json
+
+{
+  "genres": ["test"],
+  "director": ["Kevin Costner"],
+  "actors": ["Kevin Costner", "somebody else"],
+  "language": ["test"],
+  "title": "test",
+  "year": "test",
+  "rated": "test",
+  "released": "test",
+  "runtime": "test",
+  "plot": "test",
+  "poster": "test",
+  "ratings": [{"source": "test", "value": "test"}, {"source": "test", "value": "test"}, {"source": "test", "value": "test"}],
+  "moods": []
+}
 
 
 
@@ -10,10 +38,10 @@ POST http://localhost:4000/api/register
 content-type: application/json
 
 {
-  "username": "test11",
-  "password": "test11",
-  "passwordConfirmation": "test11",
-  "email": "test@test11.com"
+  "username": "bla",
+  "password": "bla",
+  "passwordConfirmation": "bla",
+  "email": "bla@bla.com"
 } 
 
 ###
@@ -22,6 +50,6 @@ POST http://localhost:4000/api/login
 content-type: application/json
 
 {
-  "email": "test@test11.com",
-  "password": "test11"
+  "email": "bla@bla.com",
+  "password": "bla"
 } 

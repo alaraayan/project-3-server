@@ -52,7 +52,7 @@ async function seedDatabase() {
     
     const movies = await Movie.create(mappedSeedMovies)
     console.log(`🤖 ${movies.length} movies added to the database! 🍿`)
-
+    // console.log(movies)
     
     
 

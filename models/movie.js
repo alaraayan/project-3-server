@@ -2,6 +2,10 @@
 import mongoose from 'mongoose'
 
 
+function validator(array) {
+  return array.length > 0
+}
+
 // ? Embedded Schema
 const movieMoodSchema = new mongoose.Schema({
   mood: { type: mongoose.Schema.ObjectId, ref: 'Mood', required: true },
@@ -22,7 +26,7 @@ const movieSchema = mongoose.Schema({
   rated: { type: String, required: true },
   released: { type: String, required: true },
   runtime: { type: String, required: true },
-  genres: {  type: [String], required: true },
+  genres: {  type: [String], required: true, validate: [validator, 'Please '] },
   director: { type: [String], required: true },
   actors: { type: [String], required: true },
   plot: { type: String, required: true },

@@ -1,12 +1,18 @@
 import express from 'express'
 import userController from '../controllers/user.js'
-
+import movieController from '../controllers/movie.js'
+import secureRoute from '../middleware/secureRoute.js'
 
 const router = express.Router()
 
+// ! Movie routes
 
+router.route('/movies')
+  .get(movieController.index)
+  .post(secureRoute, movieController.create)
 
-
+router.route('/movies/:id')
+  .get(movieController.show)
 
 // ! User routes
 
