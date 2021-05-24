@@ -9,6 +9,10 @@ const movieMoodSchema = new mongoose.Schema({
 }, {
   timestamps: true,
 })
+const ratingsSchema = new mongoose.Schema({
+  source: { type: String, required: true },
+  value: { type: String, required: true },
+})
 
 
 // ? Movie Schema
@@ -19,21 +23,15 @@ const movieSchema = mongoose.Schema({
   released: { type: String, required: true },
   runtime: { type: String, required: true },
   genres: {  type: [String], required: true },
-  director: { type: String, required: true },
+  director: { type: [String], required: true },
   actors: { type: [String], required: true },
   plot: { type: String, required: true },
+  language: { type: [String], required: true },
   poster: { type: String, required: true },
-  ratings: [{
-    source: { type: String, required: true },
-    value: { type: String, required: true },
-  }],
-  source: { type: String, required: true },
-  value: { type: String, required: true },
-  // need to check the above is right for displaying the ratings, have a feeling it won't be!
-  // ? I think this below is our embedded/referenced data for the movieMoodSchema
-  moods: [movieMoodSchema],
+  ratings: [ratingsSchema],
+  moods: { type: [String], required: true },
 })
-
+//console.log(movieMoodSchema)
 
 
 export default mongoose.model('Movie', movieSchema)
