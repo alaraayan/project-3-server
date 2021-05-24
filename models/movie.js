@@ -31,10 +31,9 @@ const movieSchema = mongoose.Schema({
   actors: { type: [String], required: true, validate: [validator, 'Please add the cast']  },
   plot: { type: String, required: true, validate: [validator, 'Please add the plot']  },
   language: { type: [String], required: true, validate: [validator, 'Please add the language of the movie']  },
-  poster: { type: String, required: true, validate: [validator, 'Please add the URL for the poster']  },
-  ratings: [ratingsSchema],
-  moods: [movieMoodSchema],
-  //moods: { type: [String], required: true },
+  poster: { type: String, required: true, validate: [validator, 'Please add the URL for the movie poster']  },
+  ratings: { type: [ratingsSchema], required: true, validate: [validator, 'Please make sure ratings are added'] },
+  moods: { type: [movieMoodSchema], required: true, validate: [validator, 'Please add your moods for this movie'] },
 })
 
 

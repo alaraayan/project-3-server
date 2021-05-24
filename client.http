@@ -1,4 +1,21 @@
-@id = 60abc62f0d7dfea00c83460c
+### GET ALL MOVIES BY MOOD
+
+
+
+### DELETE A MOVIE FOR ADMIN (isAdmin = true)
+
+### EDIT A MOVIE FOR ADMIN (isAdmin = true)
+
+### ADD A MOOD FOR USER
+
+### DELETE A MOOD FOR USER
+
+### ADD A MOVIE
+
+### 
+
+@id = 60abc62f0d7dfea00c83464f
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjMDE3YmJiMWVmNmFmM2ZjODRiMmQiLCJpYXQiOjE2MjE4OTA3NTcsImV4cCI6MTYyMTkzMzk1N30.-MZ3Sd5GQbrv3zazm6g6opIORBhIEF6PfQPDctIeHh0
 
 ###
 //* MOVIE - GET ALL MOVIES
@@ -6,12 +23,12 @@ GET http://localhost:4000/api/movies
 
 ###
 //* MOVIE - GET ONE MOVIE
-GET http://localhost:4000/api/movies/60ac0ca913b6e0b289fea72b
+GET http://localhost:4000/api/movies/{{id}}
 
 ###
 //* MOVIE - POST A MOVIE
 POST http://localhost:4000/api/movies
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFiYzYyYTBkN2RmZWEwMGM4MzQ1ZjEiLCJpYXQiOjE2MjE4ODgxNTEsImV4cCI6MTYyMTkzMTM1MX0.o9ekVt3SNhbiZXTHEQzsUvpMGzZ-A1jNzjc61dMP1TU
+Authorization: Bearer {{token}}
 content-type: application/json
 
 {
@@ -27,20 +44,21 @@ content-type: application/json
   "plot": "test",
   "poster": "test",
   "ratings": [{"source": "test", "value": "test"}, {"source": "test", "value": "test"}, {"source": "test", "value": "test"}],
-  "moods": []
+  "moods": [["uplifting"]]
 }
 
 ###
 //* MOVIE - DELETE A MOVIE 
-DELETE http://localhost:4000/api/movies/60ac0ca913b6e0b289fea72b
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFiYzYyYTBkN2RmZWEwMGM4MzQ1ZjEiLCJpYXQiOjE2MjE4ODgxNTEsImV4cCI6MTYyMTkzMTM1MX0.o9ekVt3SNhbiZXTHEQzsUvpMGzZ-A1jNzjc61dMP1TU
+DELETE http://localhost:4000/api/movies/{{id}}
+Authorization: Bearer {{token}}
 content-type: application/json
 
 ###
 //* MOVIE - UPDATE A MOVIE 
-PUT http://localhost:4000/api/movies/60ac0ca913b6e0b289fea72b
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFiYzYyYTBkN2RmZWEwMGM4MzQ1ZjEiLCJpYXQiOjE2MjE4ODgxNTEsImV4cCI6MTYyMTkzMTM1MX0.o9ekVt3SNhbiZXTHEQzsUvpMGzZ-A1jNzjc61dMP1TU
+PUT http://localhost:4000/api/movies/{{id}}
+Authorization: Bearer {{token}}
 content-type: application/json
+
 
 {
   "genres": 2,
@@ -55,7 +73,7 @@ content-type: application/json
   "plot": "test",
   "poster": "test",
   "ratings": [{"source": "test", "value": "test"}, {"source": "test", "value": "test"}, {"source": "test", "value": "test"}],
-  "moods": []
+  "moods": [["uplifting"]]
 }
 
 ###
@@ -76,6 +94,6 @@ POST http://localhost:4000/api/login
 content-type: application/json
 
 {
-  "email": "admin@email.com",
-  "password": "password"
+  "email": "b@b.com",
+  "password": "b"
 } 
