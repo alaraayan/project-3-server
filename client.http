@@ -1,4 +1,5 @@
 @id = 60abc62f0d7dfea00c83460c
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFiYmQzZDc4NWE1MDFmYzc5YWVjODEiLCJpYXQiOjE2MjE4ODQ2NTQsImV4cCI6MTYyMTkyNzg1NH0.iflsWVzzqkAldQxoLCbDan2WVjZtB_qhjlBzHMzaLRk
 
 ###
 //* get all 
@@ -11,7 +12,7 @@ GET http://localhost:4000/api/movies/{{id}}
 ###
 //* POST A MOVIE
 POST http://localhost:4000/api/movies
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFiYzlhMWI2OTYzNmExYmY4OWUwOGEiLCJpYXQiOjE2MjE4NzEwMTgsImV4cCI6MTYyMTkxNDIxOH0.Hxehgbnoy36V5wKTxL20t-OHeWNKGgwU5Fmi9keIlgw
+Authorization: Bearer {{token}}
 content-type: application/json
 
 {
@@ -27,7 +28,7 @@ content-type: application/json
   "plot": "test",
   "poster": "test",
   "ratings": [{"source": "test", "value": "test"}, {"source": "test", "value": "test"}, {"source": "test", "value": "test"}],
-  "moods": []
+  "moods": ["uplifting"]
 }
 
 ### GET ALL MOVIES BY MOOD
@@ -65,6 +66,6 @@ POST http://localhost:4000/api/login
 content-type: application/json
 
 {
-  "email": "bla@bla.com",
-  "password": "bla"
+  "email": "admin@email.com",
+  "password": "password"
 } 

@@ -1,8 +1,10 @@
-import Movies from '../models/movie.js'
+
+import Movie from '../models/movie.js'
+import Mood from '../models/moods.js'
 
 //* GET ALL MOVIES
 async function index(req,res) {
-  const moviesList = await Movies.find()
+  const moviesList = await Movie.find()
   res.status(200).json(moviesList)
 }
 
@@ -11,7 +13,7 @@ async function index(req,res) {
 async function show (req, res, next) {
   try {
     const id = req.params.id
-    const movie = await Movies.findById(id)
+    const movie = await Movie.findById(id)
 
     res.status(200).json(movie)
   } catch (e) {
@@ -22,10 +24,17 @@ async function show (req, res, next) {
 //* ADD A MOVIE
 
 async function create(req, res, next) {
-  req.body.user = req.currentUser
-  
   try {
-    const newMovie = await Movies.create(req.body)
+    req.body.moods = await Promise.all(req.body.moods.map(async (moodString) => {
+      const matchedMood = await Mood.findOne({ mood: moodString })
+    
+      return { 
+        mood: matchedMood,
+        user: req.currentUser,
+      }
+    }))
+  
+    const newMovie = await Movie.create(req.body)
     res.status(201).json(newMovie)
   } catch (e) {
     next(e)

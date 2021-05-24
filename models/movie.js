@@ -32,9 +32,8 @@ const movieSchema = mongoose.Schema({
   plot: { type: String, required: true },
   language: { type: [String], required: true },
   poster: { type: String, required: true },
-  ratings: [ratingsSchema],
-  moods: [movieMoodSchema],
-  //moods: { type: [String], required: true },
+  ratings: { type: [ratingsSchema], required: true, validate: [validator, 'Please make sure ratings are added'] },
+  moods: { type: [movieMoodSchema], required: true, validate: [validator, 'Please add your moods for this movie'] },
 })
 
 
