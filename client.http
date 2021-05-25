@@ -1,21 +1,38 @@
-@id = 60abc62f0d7dfea00c83460c
+### GET ALL MOVIES BY MOOD
+
+
+
+### DELETE A MOVIE FOR ADMIN (isAdmin = true)
+
+### EDIT A MOVIE FOR ADMIN (isAdmin = true)
+
+### ADD A MOOD FOR USER
+
+### DELETE A MOOD FOR USER
+
+### ADD A MOVIE
+
+### 
+
+@id = 60abc62f0d7dfea00c83464f
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjMDE3YmJiMWVmNmFmM2ZjODRiMmQiLCJpYXQiOjE2MjE4OTA3NTcsImV4cCI6MTYyMTkzMzk1N30.-MZ3Sd5GQbrv3zazm6g6opIORBhIEF6PfQPDctIeHh0
 
 ###
-//* get all 
+//* MOVIE - GET ALL MOVIES
 GET http://localhost:4000/api/movies
 
 ###
-//* get one movie 
+//* MOVIE - GET ONE MOVIE
 GET http://localhost:4000/api/movies/{{id}}
 
 ###
-//* POST A MOVIE
+//* MOVIE - POST A MOVIE
 POST http://localhost:4000/api/movies
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjYzk2Zjc2ZTBkZDU0YmRhNTYyOGYiLCJpYXQiOjE2MjE5MzY0OTksImV4cCI6MTYyMTk3OTY5OX0.y7GM_KipajHvOcSmiu__JHP8mIE_lUcYY3etD-mtxjE
+Authorization: Bearer {{token}}
 content-type: application/json
 
 {
-  "genres": ["test"],
+  "genres": 0,
   "director": ["Kevin Costner"],
   "actors": ["Kevin Costner", "somebody else"],
   "language": ["test"],
@@ -27,10 +44,39 @@ content-type: application/json
   "plot": "test",
   "poster": "test",
   "ratings": [{"source": "test", "value": "test"}, {"source": "test", "value": "test"}, {"source": "test", "value": "test"}],
-  "moods": []
+  "moods": [["uplifting"]]
 }
 
+###
+//* MOVIE - DELETE A MOVIE 
+DELETE http://localhost:4000/api/movies/{{id}}
+Authorization: Bearer {{token}}
+content-type: application/json
 
+###
+//* MOVIE - UPDATE A MOVIE 
+PUT http://localhost:4000/api/movies/{{id}}
+Authorization: Bearer {{token}}
+content-type: application/json
+
+### SEARCH FOR A MOVIE
+GET http://localhost:4000/api/movies/search?title=girl
+
+{
+  "genres": 2,
+  "director": ["Kevin Costner"],
+  "actors": ["Kevin Costner", "somebody else"],
+  "language": ["test"],
+  "title": "test",
+  "year": "test",
+  "rated": "test",
+  "released": "test",
+  "runtime": "test",
+  "plot": "test",
+  "poster": "test",
+  "ratings": [{"source": "test", "value": "test"}, {"source": "test", "value": "test"}, {"source": "test", "value": "test"}],
+  "moods": [["uplifting"]]
+}
 
 ###
 //* USER - REGISTER 
@@ -38,10 +84,10 @@ POST http://localhost:4000/api/register
 content-type: application/json
 
 {
-  "username": "bla",
-  "password": "bla",
-  "passwordConfirmation": "bla",
-  "email": "bla@bla.com"
+  "username": "b",
+  "password": "b",
+  "passwordConfirmation": "b",
+  "email": "b@b.com"
 } 
 
 ###
@@ -58,6 +104,7 @@ content-type: application/json
 // * Endpoint for getting all movies by mood
 GET http://localhost:4000/api/moods/60ac13e5c64f0642510c8822
 
-
-
-
+{
+  "email": "b@b.com",
+  "password": "b"
+} 

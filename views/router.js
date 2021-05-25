@@ -14,8 +14,14 @@ router.route('/movies')
 router.route('/moods/:moodId')
   .get(movieController.showMoviesByMood)
 
+router.route('/movies/search')
+  .get(movieController.search)
+    
 router.route('/movies/:id')
   .get(movieController.show)
+  .delete(secureRoute, movieController.remove)
+  .put(secureRoute, movieController.update)
+
 
 
 // ! User routes
@@ -23,7 +29,6 @@ router.route('/movies/:id')
 // * Register 
 router.route('/register')
   .post(userController.register)
-
 
 // * Login
 router.route('/login')

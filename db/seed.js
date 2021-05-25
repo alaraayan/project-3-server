@@ -35,7 +35,6 @@ async function seedDatabase() {
     // const seedDataBuffer = fs.readFileSync('./db/data/movies.json')
 
     const seedData = await getSeedData()
-    // console.log(seedData)
     
     const adminUser = users.find(user => (user.username === 'admin'))
     const mappedSeedMovies = seedData.map((movie) => {

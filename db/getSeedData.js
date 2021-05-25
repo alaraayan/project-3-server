@@ -1,4 +1,5 @@
 import axios from 'axios'
+//import fs from 'fs'
 
 import initialSeedData from './lib/moviesWithMoods.js'
 
@@ -39,5 +40,6 @@ async function getSeedData() {
   console.log(mappedFilms)
   return mappedFilms
 }
+
 
 export default getSeedData
