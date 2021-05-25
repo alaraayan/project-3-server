@@ -10,7 +10,6 @@ function format(string) {
 }
 
 async function getSeedData() {
-  console.log('I HAVE MADE IT TO THE FUNCTION!')
   const allFilms = []
   for (const movie of initialSeedData) {
     const { data } = await axios.get(baseUrl + movie.imdb)
