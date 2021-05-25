@@ -1,4 +1,5 @@
 import axios from 'axios'
+//import fs from 'fs'
 
 import initialSeedData from './lib/moviesWithMoods.js'
 
@@ -9,6 +10,7 @@ function format(string) {
 }
 
 async function getSeedData() {
+  console.log('I HAVE MADE IT TO THE FUNCTION!')
   const allFilms = []
   for (const movie of initialSeedData) {
     const { data } = await axios.get(baseUrl + movie.imdb)
@@ -39,5 +41,6 @@ async function getSeedData() {
   console.log(mappedFilms)
   return mappedFilms
 }
+
 
 export default getSeedData

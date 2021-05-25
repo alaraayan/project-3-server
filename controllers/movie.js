@@ -56,7 +56,6 @@ async function create(req, res, next) {
 //* SEARCH A MOVIE
 async function search(req, res, next) {
   try {
-    // above makes the search query 'partial' and case insensitive
     const searchParams = { 
       ...req.query, 
       title: new RegExp(req.query.title, 'i'),

@@ -24,7 +24,6 @@ router.route('/movies/:id')
 router.route('/register')
   .post(userController.register)
 
-
 // * Login
 router.route('/login')
   .post(userController.login)
