@@ -1,14 +1,14 @@
 ### 
 
-@id = 60abc62f0d7dfea00c83464f
+@id = 60ad0dfa7ea7b5e73f19c336
 
-@moodId = 60ac13e5c64f0642510c8822
+@moodId = 60ad0b97465525e70f28f9fb
 
-@addedMoodId = 
+@addedMoodId = 60ad0b83465525e70f28f9d8
 
-@commentId = 60ad01177fd140df9b9e607c
+@commentId = 60ad0d2f7ea7b5e73f19c333
 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjMDE3YmJiMWVmNmFmM2ZjODRiMmQiLCJpYXQiOjE2MjE4OTQ3ODksImV4cCI6MTYyMTkzNzk4OX0.7sEE4khYf9Ze_nclNDTxvq6Uen6VK7JcuY_mXM40Ze4
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFkMGM2ZjdlYTdiNWU3M2YxOWMzMjYiLCJpYXQiOjE2MjE5NTQxMzYsImV4cCI6MTYyMTk5NzMzNn0.Zo-yPEkg4s20fjxlZafCO__DlGDEQ7WLXk1DuWGGi7k
 
 
 ###
@@ -34,7 +34,7 @@ content-type: application/json
   "director": ["Kevin Costner"],
   "actors": ["Kevin Costner", "somebody else"],
   "language": ["test"],
-  "title": "Indiana Jones and the Raiders of the Lost Ark",
+  "title": "Indiana Jones and the blabla",
   "year": "test",
   "rated": "test",
   "released": "test",
@@ -57,8 +57,24 @@ PUT http://localhost:4000/api/movies/{{id}}
 Authorization: Bearer {{token}}
 content-type: application/json
 
+{
+  "genres": 0,
+  "director": ["Kevin Costner"],
+  "actors": ["Kevin Costner", "somebody else"],
+  "language": ["test"],
+  "title": "Indiana Jones and the blah",
+  "year": "test",
+  "rated": "test",
+  "released": "test",
+  "runtime": "test",
+  "plot": "test",
+  "poster": "test",
+  "ratings": [{"source": "test", "value": "test"}, {"source": "test", "value": "test"}, {"source": "test", "value": "test"}],
+  "moods": [["uplifting"]]
+}
+
 ### SEARCH FOR A MOVIE
-GET http://localhost:4000/api/movies/search?title=girl
+GET http://localhost:4000/api/movies/search?actors=jake
 
 {
   "genres": 2,
@@ -82,10 +98,10 @@ POST http://localhost:4000/api/register
 content-type: application/json
 
 {
-  "username": "a",
-  "password": "a",
-  "passwordConfirmation": "a",
-  "email": "a@a.com"
+  "username": "b",
+  "password": "b",
+  "passwordConfirmation": "b",
+  "email": "b@b.com"
 } 
 
 ###
@@ -129,10 +145,7 @@ content-type: application/json
 DELETE http://localhost:4000/api/movies/{{id}}/comment/{{commentId}}
 Authorization: Bearer {{token}}
 content-type: application/json
-{
-  "email": "bla@bla.com",
-  "password": "bla"
-} 
+
 
 
 

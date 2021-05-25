@@ -28,6 +28,9 @@ async function seedDatabase() {
     const mappedSeedMovies = seedData.map((movie) => {
       const movieMoods = movie.moods.map(mood => {
         const matchedMood = moodsList.find(m => m.mood === mood)
+        if (!matchedMood) {
+          console.log(mood)
+        }
         return { 
           mood: matchedMood,
           user: adminUser,

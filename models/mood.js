@@ -5,7 +5,7 @@ import uniqueValidator from 'mongoose-unique-validator'
 
 
 const moodSchema = new mongoose.Schema({
-  moods: { type: String, required: true, unique: true },
+  mood: { type: String, required: true, unique: true },
 })
 
 // function validator(array) {
