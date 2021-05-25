@@ -1,6 +1,6 @@
 
 import mongoose from 'mongoose'
-
+import uniqueValidator from 'mongoose-unique-validator'
 
 function validator(array) {
   return array.length > 0
@@ -21,7 +21,7 @@ const ratingsSchema = new mongoose.Schema({
 
 // ? Movie Schema
 const movieSchema = mongoose.Schema({
-  title: { type: String, required: true },
+  title: { type: String, required: true , unique: true },
   year: { type: String, required: true },
   rated: { type: String, required: true },
   released: { type: String, required: true },
@@ -38,5 +38,5 @@ const movieSchema = mongoose.Schema({
 })
 
 
-
+movieSchema.plugin(uniqueValidator)
 export default mongoose.model('Movie', movieSchema)
