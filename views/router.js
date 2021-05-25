@@ -16,6 +16,12 @@ router.route('/movies')
 
 
 // * Get/Delete/Edit a single movie
+router.route('/moods/:moodId')
+  .get(movieController.showMoviesByMood)
+
+router.route('/movies/search')
+  .get(movieController.search)
+    
 router.route('/movies/:id')
   .get(movieController.show)
   .delete(secureRoute, movieController.remove)
@@ -36,7 +42,6 @@ router.route('/movies/:movieId/mood/:moodId')
 // * Register 
 router.route('/register')
   .post(userController.register)
-
 
 // * Login
 router.route('/login')

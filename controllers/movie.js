@@ -3,9 +3,13 @@ import Movie from '../models/movie.js'
 import Mood from '../models/mood.js'
 
 //* GET ALL MOVIES
-async function index(req,res) {
-  const moviesList = await Movie.find()
-  res.status(200).json(moviesList)
+async function index(req, res, next) {
+  try {
+    const moviesList = await Movie.find().populate('user')
+    res.status(200).json(moviesList)
+  } catch (e) {
+    next(e)
+  }
 }
 
 //* GET A MOVIE
@@ -102,25 +106,48 @@ async function remove(req, res, next) {
   }
 }
 
-//* ADD A MOOD
 
 //* GET ALL MOVIES WITH SAME MOOD
 
-//* SEARCH A MOOD
+async function showMoviesByMood(req, res, next) {
+  try {
+    const matchedMood = await Mood.findOne( { _id: req.params.moodId })
+    const getMoviesByMood = await Movie.find( { 'moods.mood': matchedMood })
+    res.status(201).json(getMoviesByMood)
+  } catch (e) {
+    next(e)
+  }
+}
 
-//*SEARCH A MOVIE
 
+//* SEARCH A MOVIE
+async function search(req, res, next) {
+  try {
+    const searchParams = { 
+      ...req.query, 
+      title: new RegExp(req.query.title, 'i'),
+      director: new RegExp(req.query.director, 'i'),
+      genres: new RegExp(req.query.genres, 'i'),
+      actors: new RegExp(req.query.actors, 'i'),
+      language: new RegExp(req.query.language, 'i'),
+      plot: new RegExp(req.query.plot, 'i'),
+    } 
 
-
-
-
-
+    const movieList = await Movie.find(searchParams)
+    console.log(searchParams)
+    res.status(200).json(movieList)
+  } catch (e) {
+    next(e)
+  }
+}
 
 
 export default {
   index,
   create,
   show,
+  showMoviesByMood,
   remove,
   update,
+  search,
 }

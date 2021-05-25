@@ -1,25 +1,23 @@
-### GET ALL MOVIES BY MOOD
-
-
-
-### DELETE A MOVIE FOR ADMIN (isAdmin = true)
-
-### EDIT A MOVIE FOR ADMIN (isAdmin = true)
-
-### ADD A MOOD FOR USER
-
-### DELETE A MOOD FOR USER
-
-### ADD A MOVIE
-
 ### 
 
 @id = 60abc62f0d7dfea00c83464f
+
+@moodId = 60ac13e5c64f0642510c8822
+
+@addedMoodId = 
+
+@commentId = 60ad01177fd140df9b9e607c
+
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjMDE3YmJiMWVmNmFmM2ZjODRiMmQiLCJpYXQiOjE2MjE4OTQ3ODksImV4cCI6MTYyMTkzNzk4OX0.7sEE4khYf9Ze_nclNDTxvq6Uen6VK7JcuY_mXM40Ze4
+
 
 ###
 //* MOVIE - GET ALL MOVIES
 GET http://localhost:4000/api/movies
+
+###
+// * MOVIE - GET ALL MOVIES BY MOOD 
+GET http://localhost:4000/api/moods/{{addedMoodId}}
 
 ###
 //* MOVIE - GET ONE MOVIE
@@ -36,7 +34,7 @@ content-type: application/json
   "director": ["Kevin Costner"],
   "actors": ["Kevin Costner", "somebody else"],
   "language": ["test"],
-  "title": "test",
+  "title": "Indiana Jones and the Raiders of the Lost Ark",
   "year": "test",
   "rated": "test",
   "released": "test",
@@ -59,6 +57,8 @@ PUT http://localhost:4000/api/movies/{{id}}
 Authorization: Bearer {{token}}
 content-type: application/json
 
+### SEARCH FOR A MOVIE
+GET http://localhost:4000/api/movies/search?title=girl
 
 {
   "genres": 2,
@@ -77,7 +77,7 @@ content-type: application/json
 }
 
 ###
-//* USER - REGISTER 
+//* USER - REGISTER A USER
 POST http://localhost:4000/api/register
 content-type: application/json
 
@@ -89,7 +89,7 @@ content-type: application/json
 } 
 
 ###
-//* USER - LOGIN 
+//* USER - LOGIN A USER
 POST http://localhost:4000/api/login
 content-type: application/json
 
@@ -99,9 +99,9 @@ content-type: application/json
 } 
 
 ###
-//* MOODS - POST A MOOD
-POST http://localhost:4000/api/movies/60abc62f0d7dfea00c83464f/mood
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjMDE3YmJiMWVmNmFmM2ZjODRiMmQiLCJpYXQiOjE2MjE5Mzc2ODUsImV4cCI6MTYyMTk4MDg4NX0.aTzCX-M5k_YORFdfWrRPzHncCt8shme2tS3OZkT8_Iw
+//* MOOD - POST A MOOD
+POST http://localhost:4000/api/movies/{{id}}/mood
+Authorization: Bearer {{token}}
 content-type: application/json
 
 {
@@ -109,15 +109,15 @@ content-type: application/json
 }
 
 ###
-//* MOODS - DELETE A MOOD
-DELETE http://localhost:4000/api/movies/60abc62f0d7dfea00c83464f/mood/60acd389cdd171d8db502bd0
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFiYzYyYTBkN2RmZWEwMGM4MzQ1ZjEiLCJpYXQiOjE2MjE5NDc0MjksImV4cCI6MTYyMTk5MDYyOX0.6W-a6Q7z3b40YYC3aj5VKGACLQGFojw4NULXvbxHCIk
+//* MOOD - DELETE A MOOD
+DELETE http://localhost:4000/api/movies/{{id}}/mood/{{moodId}}
+Authorization: Bearer {{token}}
 content-type: application/json
 
 ###
-//* COMMENTS - POST A COMMENT
-POST http://localhost:4000/api/movies/60abc62f0d7dfea00c83464f/comment
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjYmQ1NDE0N2ZjYWQ2MWUyM2ExZjUiLCJpYXQiOjE2MjE5NTA3MTksImV4cCI6MTYyMTk5MzkxOX0.eyp6sEkYCLlHcyDAL_hMtyyFVg7qmCxsvwTqGxI8tVU
+//* COMMENT - POST A COMMENT
+POST http://localhost:4000/api/movies/{{id}}/comment
+Authorization: Bearer {{token}}
 content-type: application/json
 
 {
@@ -125,7 +125,15 @@ content-type: application/json
 }
 
 ###
-//* COMMENTS - DELETE A COMMENT
-DELETE http://localhost:4000/api/movies/60abc62f0d7dfea00c83464f/comment/60ad01177fd140df9b9e607c
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjYmQ1NDE0N2ZjYWQ2MWUyM2ExZjUiLCJpYXQiOjE2MjE5NTA3MTksImV4cCI6MTYyMTk5MzkxOX0.eyp6sEkYCLlHcyDAL_hMtyyFVg7qmCxsvwTqGxI8tVU
+//* COMMENT - DELETE A COMMENT
+DELETE http://localhost:4000/api/movies/{{id}}/comment/{{commentId}}
+Authorization: Bearer {{token}}
 content-type: application/json
+{
+  "email": "bla@bla.com",
+  "password": "bla"
+} 
+
+
+
+

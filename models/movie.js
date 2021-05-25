@@ -1,6 +1,6 @@
 
 import mongoose from 'mongoose'
-
+import uniqueValidator from 'mongoose-unique-validator'
 
 function validator(array) {
   return array.length > 0
@@ -29,7 +29,7 @@ const commentSchema = new mongoose.Schema({
 
 // ? Movie Schema
 const movieSchema = mongoose.Schema({
-  title: { type: String, required: true, validate: [validator, 'Please add the movie title']  },
+  title: { type: String, required: true, unique: true, validate: [validator, 'Please add the movie title']  },
   year: { type: String, required: true, validate: [validator, 'Please add the release year']  },
   rated: { type: String, required: true, validate: [validator, 'Please add the rating']  },
   released: { type: String, required: true, validate: [validator, 'Please add the release date']  },
@@ -46,5 +46,5 @@ const movieSchema = mongoose.Schema({
 })
 
 
-
+movieSchema.plugin(uniqueValidator)
 export default mongoose.model('Movie', movieSchema)
