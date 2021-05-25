@@ -15,7 +15,7 @@
 ### 
 
 @id = 60abc62f0d7dfea00c83464f
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjMDE3YmJiMWVmNmFmM2ZjODRiMmQiLCJpYXQiOjE2MjE4OTA3NTcsImV4cCI6MTYyMTkzMzk1N30.-MZ3Sd5GQbrv3zazm6g6opIORBhIEF6PfQPDctIeHh0
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjMDE3YmJiMWVmNmFmM2ZjODRiMmQiLCJpYXQiOjE2MjE4OTQ3ODksImV4cCI6MTYyMTkzNzk4OX0.7sEE4khYf9Ze_nclNDTxvq6Uen6VK7JcuY_mXM40Ze4
 
 ###
 //* MOVIE - GET ALL MOVIES
@@ -82,10 +82,10 @@ POST http://localhost:4000/api/register
 content-type: application/json
 
 {
-  "username": "b",
-  "password": "b",
-  "passwordConfirmation": "b",
-  "email": "b@b.com"
+  "username": "a",
+  "password": "a",
+  "passwordConfirmation": "a",
+  "email": "a@a.com"
 } 
 
 ###
@@ -94,6 +94,38 @@ POST http://localhost:4000/api/login
 content-type: application/json
 
 {
-  "email": "b@b.com",
-  "password": "b"
+  "email": "a@a.com",
+  "password": "a"
 } 
+
+###
+//* MOODS - POST A MOOD
+POST http://localhost:4000/api/movies/60abc62f0d7dfea00c83464f/mood
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjMDE3YmJiMWVmNmFmM2ZjODRiMmQiLCJpYXQiOjE2MjE5Mzc2ODUsImV4cCI6MTYyMTk4MDg4NX0.aTzCX-M5k_YORFdfWrRPzHncCt8shme2tS3OZkT8_Iw
+content-type: application/json
+
+{
+  "mood": "weird"
+}
+
+###
+//* MOODS - DELETE A MOOD
+DELETE http://localhost:4000/api/movies/60abc62f0d7dfea00c83464f/mood/60acd389cdd171d8db502bd0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFiYzYyYTBkN2RmZWEwMGM4MzQ1ZjEiLCJpYXQiOjE2MjE5NDc0MjksImV4cCI6MTYyMTk5MDYyOX0.6W-a6Q7z3b40YYC3aj5VKGACLQGFojw4NULXvbxHCIk
+content-type: application/json
+
+###
+//* COMMENTS - POST A COMMENT
+POST http://localhost:4000/api/movies/60abc62f0d7dfea00c83464f/comment
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjYmQ1NDE0N2ZjYWQ2MWUyM2ExZjUiLCJpYXQiOjE2MjE5NTA3MTksImV4cCI6MTYyMTk5MzkxOX0.eyp6sEkYCLlHcyDAL_hMtyyFVg7qmCxsvwTqGxI8tVU
+content-type: application/json
+
+{
+  "text": "comment-fing"
+}
+
+###
+//* COMMENTS - DELETE A COMMENT
+DELETE http://localhost:4000/api/movies/60abc62f0d7dfea00c83464f/comment/60ad01177fd140df9b9e607c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjYmQ1NDE0N2ZjYWQ2MWUyM2ExZjUiLCJpYXQiOjE2MjE5NTA3MTksImV4cCI6MTYyMTk5MzkxOX0.eyp6sEkYCLlHcyDAL_hMtyyFVg7qmCxsvwTqGxI8tVU
+content-type: application/json

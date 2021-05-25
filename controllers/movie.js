@@ -1,6 +1,6 @@
 
 import Movie from '../models/movie.js'
-import Mood from '../models/moods.js'
+import Mood from '../models/mood.js'
 
 //* GET ALL MOVIES
 async function index(req,res) {

@@ -1,10 +1,11 @@
 // moods need to have an id so they need to be an object?
 // we need a moods model so that they can have an endpoint so that they can be listed/displayed on the front end
 import mongoose from 'mongoose'
+import uniqueValidator from 'mongoose-unique-validator'
 
 
 const moodSchema = new mongoose.Schema({
-  mood: { type: String, required: true, unique: true },
+  moods: { type: String, required: true, unique: true },
 })
 
 // function validator(array) {
@@ -16,5 +17,5 @@ const moodSchema = new mongoose.Schema({
 // })
 
 
-
+moodSchema.plugin(uniqueValidator)
 export default mongoose.model('Mood', moodSchema)

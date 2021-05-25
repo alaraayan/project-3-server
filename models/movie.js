@@ -11,6 +11,8 @@ const movieMoodSchema = new mongoose.Schema({
   // mood: { type: mongoose.Schema.ObjectId, ref: 'Mood', required: true, validate: [validator, 'Please add at least one mood'] },
   mood: { type: mongoose.Schema.ObjectId, ref: 'Mood', required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+}, { 
+  timestamps: true,
 })
 
 const ratingsSchema = new mongoose.Schema({
@@ -18,6 +20,12 @@ const ratingsSchema = new mongoose.Schema({
   value: { type: String, required: true },
 })
 
+const commentSchema = new mongoose.Schema({
+  text: { type: String, required: true },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+}, { 
+  timestamps: true,
+})
 
 // ? Movie Schema
 const movieSchema = mongoose.Schema({
@@ -34,6 +42,7 @@ const movieSchema = mongoose.Schema({
   poster: { type: String, required: true, validate: [validator, 'Please add the URL for the movie poster']  },
   ratings: { type: [ratingsSchema], required: true, validate: [validator, 'Please make sure ratings are added'] },
   moods: { type: [movieMoodSchema], required: true, validate: [validator, 'Please add your moods for this movie'] },
+  comments: { type: [commentSchema], required: false },
 })
 
 
