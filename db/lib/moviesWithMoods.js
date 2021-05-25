@@ -65,10 +65,6 @@ export default [
     'moods': ['epic', 'exhilarating', 'adventurous'],
   },
   {
-    'imdb': 'tt0167260',
-    'moods': ['epic', 'exhilarating', 'adventurous'],
-  },
-  {
     'imdb': 'tt0361748',
     'moods': ['exhilarating', 'melodramatic', 'action-packed'],
   },

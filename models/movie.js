@@ -29,6 +29,7 @@ const commentSchema = new mongoose.Schema({
 
 // ? Movie Schema
 const movieSchema = mongoose.Schema({
+  imdb: { type: String, required: true, unique: true, validate: [validator, 'Please add the IMDb ID']  },
   title: { type: String, required: true, unique: true, validate: [validator, 'Please add the movie title']  },
   year: { type: String, required: true, validate: [validator, 'Please add the release year']  },
   rated: { type: String, required: true, validate: [validator, 'Please add the rating']  },

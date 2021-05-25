@@ -66,7 +66,7 @@ async function update(req, res, next) {
     const movie = await Movie.findById(req.params.id)
 
     if (!movie) {
-      console.log('404 Movie not found')
+      throw new NotFound('Movie not found')
     }
 
     if (isAdmin === 'false' ) {
