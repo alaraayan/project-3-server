@@ -36,8 +36,8 @@ async function login(req, res, next) {
     console.log('Success')
     res.status(202).json({ message: 'Login successful', token })
 
-  } catch (err) {
-    next(err)
+  } catch (e) {
+    next(encodeURIComponent)
   }
 }
 

@@ -16,6 +16,8 @@ router.route('/movies/search')
     
 router.route('/movies/:id')
   .get(movieController.show)
+  .delete(secureRoute, movieController.remove)
+  .put(secureRoute, movieController.update)
 
 
 // ! User routes
