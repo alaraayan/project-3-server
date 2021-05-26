@@ -13,11 +13,12 @@ async function getSeedData() {
   const allFilms = []
   for (const movie of initialSeedData) {
     const { data } = await axios.get(baseUrl + movie.imdb)
-    const movieWithMoods = { ...data, moods: movie.moods }
+    const movieWithMoods = { ...data, ...movie }
     allFilms.push(movieWithMoods)
   }
 
   const mappedFilms = allFilms.map(film => ({
+    imdb: film.imdb,
     title: film.Title,
     year: film.Year,
     rated: film.Rated,
