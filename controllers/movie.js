@@ -1,4 +1,4 @@
-
+import { AlreadyExists } from '../lib/errors.js'
 import Movie from '../models/movie.js'
 import Mood from '../models/mood.js'
 
@@ -39,10 +39,15 @@ async function create(req, res, next) {
         user: req.currentUser,
       }
     }))
+    const existingMovie = await Movie.find({ imdb: req.body.imdb })
+    if (existingMovie){
+      throw new AlreadyExists
+    }
   
     const newMovie = await Movie.create(req.body)
     res.status(201).json(newMovie)
   } catch (e) {
+    
     next(e)
   }
 }

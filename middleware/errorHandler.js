@@ -15,6 +15,10 @@ export default function errorHandler(err, req, res, next) {
     return res.status(404).json({ message: 'Not found' })
   }
 
+  if (err.name === 'AlreadyExists') {
+    return res.status(400).json({ message: 'This movie already exists in the Moodflix database' })
+  }
+
   // ? Is valid errors..
   if (err.name === 'NotValid' || err.name === 'NotOwner') {
     return res.status(400).json({ message: 'There was a problem.' })
