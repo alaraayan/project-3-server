@@ -30,6 +30,7 @@ Authorization: Bearer {{token}}
 content-type: application/json
 
 {
+  "imdb": "2", 
   "genres": 0,
   "director": ["Kevin Costner"],
   "actors": ["Kevin Costner", "somebody else"],
@@ -73,24 +74,13 @@ content-type: application/json
   "moods": [["uplifting"]]
 }
 
-### SEARCH FOR A MOVIE
+### 
+//* MOVIE - SEARCH FOR A MOVIE
 GET http://localhost:4000/api/movies/search?actors=jake
 
-{
-  "genres": 2,
-  "director": ["Kevin Costner"],
-  "actors": ["Kevin Costner", "somebody else"],
-  "language": ["test"],
-  "title": "test",
-  "year": "test",
-  "rated": "test",
-  "released": "test",
-  "runtime": "test",
-  "plot": "test",
-  "poster": "test",
-  "ratings": [{"source": "test", "value": "test"}, {"source": "test", "value": "test"}, {"source": "test", "value": "test"}],
-  "moods": [["uplifting"]]
-}
+###
+//* MOOD - GET ALL MOODS
+GET http://localhost:4000/api/moods
 
 ###
 //* USER - REGISTER A USER

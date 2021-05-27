@@ -14,14 +14,15 @@ router.route('/movies')
   .get(movieController.index)
   .post(secureRoute, movieController.create)
 
-
-// * Get/Delete/Edit a single movie
+// * Get/Delete/Edit a single movie with mood id
 router.route('/moods/:moodId')
   .get(movieController.showMoviesByMood)
 
+// * Search our API for a movie
 router.route('/movies/search')
   .get(movieController.search)
     
+// * Get/Delete/Edit a single movie
 router.route('/movies/:id')
   .get(movieController.show)
   .delete(secureRoute, movieController.remove)
@@ -36,6 +37,10 @@ router.route('/movies/:id/mood')
 // * Delete a mood
 router.route('/movies/:movieId/mood/:moodId')
   .delete(secureRoute, moodController.remove)
+
+// * Get all moods
+router.route('/moods')
+  .get(moodController.index)
 
 
 // ! User routes
