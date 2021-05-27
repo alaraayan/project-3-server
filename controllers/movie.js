@@ -39,7 +39,7 @@ async function create(req, res, next) {
         user: req.currentUser,
       }
     }))
-    const existingMovie = await Movie.find({ imdb: req.body.imdb })
+    const existingMovie = await Movie.findOne({ imdb: req.body.imdb })
     if (existingMovie){
       throw new AlreadyExists
     }
