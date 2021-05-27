@@ -19,7 +19,7 @@ async function show (req, res, next) {
     const id = req.params.id
     // const movie = await Movies.findById(id).populate('user')
     // console.log(movie)
-    const movie = await Movie.findById(id)
+    const movie = await Movie.findById(id).populate('moods.mood').populate('moods.user')
 
     res.status(200).json(movie)
   } catch (e) {
