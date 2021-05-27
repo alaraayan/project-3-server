@@ -5,7 +5,7 @@ import Mood from '../models/mood.js'
 //* GET ALL MOVIES
 async function index(req, res, next) {
   try {
-    const moviesList = await Movie.find().populate('user')
+    const moviesList = await Movie.find().populate('moods.mood').populate('user')
     res.status(200).json(moviesList)
   } catch (e) {
     next(e)
