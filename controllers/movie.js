@@ -6,7 +6,7 @@ import userData from '../db/data/users.js'
 //* GET ALL MOVIES
 async function index(req, res, next) {
   try {
-    const moviesList = await Movie.find().populate('user')
+    const moviesList = await Movie.find().populate('moods.mood').populate('user')
     res.status(200).json(moviesList)
   } catch (e) {
     next(e)
@@ -40,10 +40,10 @@ async function create(req, res, next) {
         adminUser: adminUser,
       }
     }))
-    // const existingMovie = await Movie.find({ imdb: req.body.imdb })
-    // if (existingMovie){
-    //   throw new AlreadyExists
-    // }
+    const existingMovie = await Movie.findOne({ imdb: req.body.imdb })
+    if (existingMovie){
+      throw new AlreadyExists
+    }
   
     const newMovie = await Movie.create(req.body)
     res.status(201).json(newMovie)
@@ -139,7 +139,7 @@ async function search(req, res, next) {
       plot: new RegExp(req.query.plot, 'i'),
     } 
 
-    const movieList = await Movie.find(searchParams)
+    const movieList = await Movie.find(searchParams).populate('moods.mood')
     console.log(searchParams)
     res.status(200).json(movieList)
   } catch (e) {
