@@ -138,7 +138,7 @@ async function search(req, res, next) {
       plot: new RegExp(req.query.plot, 'i'),
     } 
 
-    const movieList = await Movie.find(searchParams)
+    const movieList = await Movie.find(searchParams).populate('moods.mood')
     console.log(searchParams)
     res.status(200).json(movieList)
   } catch (e) {

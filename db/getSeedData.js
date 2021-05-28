@@ -5,10 +5,6 @@ import initialSeedData from './lib/moviesWithMoods.js'
 
 const baseUrl = 'http://www.omdbapi.com/?apikey=1874d202&plot=full&i='
 
-function format(string) {
-  return string.split(',').map(str => str.trim())
-}
-
 async function getSeedData() {
   const allFilms = []
   for (const movie of initialSeedData) {
@@ -24,11 +20,11 @@ async function getSeedData() {
     rated: film.Rated,
     released: film.Released,
     runtime: film.Runtime,
-    genres: format(film.Genre),
-    director: format(film.Director),
-    actors: format(film.Actors),
+    genres: film.Genre,
+    director: film.Director,
+    actors: film.Actors,
     plot: film.Plot,
-    language: format(film.Language),
+    language: film.Language,
     poster: film.Poster,
     ratings: film.Ratings.map(rating => ({
       source: rating.Source,
