@@ -1,6 +1,6 @@
 ### 
 
-@id = 60ad0b97465525e70f28f9f7
+@id = 60ad0b97465525e70f28fa3c
 
 @moodId = 60ad0b97465525e70f28f9fb
 
@@ -8,7 +8,7 @@
 
 @commentId = 60ad0dfa7ea7b5e73f19c336
 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFkMGM2ZjdlYTdiNWU3M2YxOWMzMjYiLCJpYXQiOjE2MjE5NTQxMzYsImV4cCI6MTYyMTk5NzMzNn0.Zo-yPEkg4s20fjxlZafCO__DlGDEQ7WLXk1DuWGGi7k
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFkMGI4MzQ2NTUyNWU3MGYyOGY5ZDAiLCJpYXQiOjE2MjIxNjYwMjMsImV4cCI6MTYyMjIwOTIyM30.BaJMCCpwiAp4ekwUcoAl4gM3FVp0bdN0hhR4t1jUD6w
 
 
 ###
@@ -30,19 +30,19 @@ Authorization: Bearer {{token}}
 content-type: application/json
 
 {
-  "imdb": "2", 
+  "imdb": 546457, 
   "genres": 0,
-  "director": ["Kevin Costner"],
-  "actors": ["Kevin Costner", "somebody else"],
+  "director": ["I LOVE KEVIN COSTNER NOW"],
+  "actors": ["I LOVE KEVIN COSTNER NOW"],
   "language": ["test"],
-  "title": "Indiana Jones and the blabla",
-  "year": "test",
-  "rated": "test",
-  "released": "test",
-  "runtime": "test",
-  "plot": "test",
-  "poster": "test",
-  "ratings": [{"source": "test", "value": "test"}, {"source": "test", "value": "test"}, {"source": "test", "value": "test"}],
+  "title": "I LOVE KEVIN COSTNER NOW",
+  "year": "I LOVE KEVIN COSTNER NOW",
+  "rated": "I LOVE KEVIN COSTNER NOW",
+  "released": "I LOVE KEVIN COSTNER NOW",
+  "runtime": "I LOVE KEVIN COSTNER NOW",
+  "plot": "I LOVE KEVIN COSTNER NOW",
+  "poster": "I LOVE KEVIN COSTNER NOW",
+  "ratings": [{"source": "I LOVE KEVIN COSTNER NOW", "value": "I LOVE KEVIN COSTNER NOW"}, {"source": "I LOVE KEVIN COSTNER NOW", "value": "I LOVE KEVIN COSTNER NOW"}, {"source": "I LOVE KEVIN COSTNER NOW", "value": "I LOVE KEVIN COSTNER NOW"}],
   "moods": [["uplifting"]]
 }
 
@@ -100,8 +100,8 @@ POST http://localhost:4000/api/login
 content-type: application/json
 
 {
-  "email": "a@a.com",
-  "password": "a"
+  "email": "admin@email.com",
+  "password": "password"
 } 
 
 ###
@@ -127,7 +127,7 @@ Authorization: Bearer {{token}}
 content-type: application/json
 
 {
-  "text": "comment-fing"
+  "text": "commenting once again"
 }
 
 ###

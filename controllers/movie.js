@@ -1,6 +1,7 @@
 import { AlreadyExists } from '../lib/errors.js'
 import Movie from '../models/movie.js'
 import Mood from '../models/mood.js'
+import userData from '../db/data/users.js'
 
 //* GET ALL MOVIES
 async function index(req, res, next) {
@@ -17,9 +18,7 @@ async function index(req, res, next) {
 async function show (req, res, next) {
   try {
     const id = req.params.id
-    // const movie = await Movies.findById(id).populate('user')
-    // console.log(movie)
-    const movie = await Movie.findById(id).populate('moods.mood').populate('moods.user')
+    const movie = await Movie.findById(id).populate('moods.mood').populate('moods.user').populate('comments.user')
 
     res.status(200).json(movie)
   } catch (e) {
@@ -33,16 +32,18 @@ async function create(req, res, next) {
   try {
     req.body.moods = await Promise.all(req.body.moods.map(async (moodString) => {
       const matchedMood = await Mood.findOne({ mood: moodString })
+      const adminUser = userData.find(user => (user.username === 'admin'))
     
       return { 
         mood: matchedMood,
         user: req.currentUser,
+        adminUser: adminUser,
       }
     }))
-    const existingMovie = await Movie.find({ imdb: req.body.imdb })
-    if (existingMovie){
-      throw new AlreadyExists
-    }
+    // const existingMovie = await Movie.find({ imdb: req.body.imdb })
+    // if (existingMovie){
+    //   throw new AlreadyExists
+    // }
   
     const newMovie = await Movie.create(req.body)
     res.status(201).json(newMovie)

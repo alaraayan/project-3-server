@@ -21,7 +21,21 @@ userSchema.methods.validatePassword = function validatePassword(password) {
   return bcrypt.compareSync(password, this.password)
 }
 
-userSchema.plugin(mongooseHidden({ defaultHidden: { password: true, email: true, _id: false, isAdmin: false } }))
+// schema 
+//   .virtual('passwordConfirmation')
+//   .set(function setpasswordConfirmation(passwordConfirmation) {
+//     this._passwordConfirmation = passwordConfirmation
+//   })
+
+// schema
+//   .pre('validate', function checkPassword(next) {
+//     if (this.isModified('password') && (this.password !== this._passwordConfirmation)) {
+//       this.invalidate('passwordConfirmation', 'should match passwords')
+//     }
+//     next()
+//   })
+
+userSchema.plugin(mongooseHidden({ defaultHidden: { password: true, email: true, _id: false, isAdmin: false, username: false } }))
 userSchema.plugin(uniqueValidator)
 
 export default mongoose.model('User', userSchema)

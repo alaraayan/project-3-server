@@ -27,14 +27,14 @@ async function login(req, res, next) {
     if (!isValidPassword) {
       throw new Error
     }
-
+    const isAdmin = user.isAdmin
     const token = jwt.sign(
       { userId: user._id },
       secret,
       { expiresIn: '12h' }
     )
     console.log('Success')
-    res.status(202).json({ message: 'Login successful', token })
+    res.status(202).json({ message: 'Login successful', token, isAdmin })
 
   } catch (e) {
     next(encodeURIComponent)
