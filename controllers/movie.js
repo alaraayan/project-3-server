@@ -71,9 +71,6 @@ async function update(req, res, next) {
     const isAdmin = req.currentUser.isAdmin
     const movie = await Movie.findById(req.params.id)
 
-    if (!movie) {
-      throw new NotFound('Movie not found')
-    }
 
     if (isAdmin === 'false' ) {
       return res.status(401).json({ message: 'Only admin users can edit a movie' })

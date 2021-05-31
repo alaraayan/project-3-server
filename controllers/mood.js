@@ -21,6 +21,8 @@ async function create(req, res, next) {
 
   try {
     const movie = await Movie.findById(req.params.id)
+      .populate('user')
+      .populate('moods.mood.mood.mood')
     if (!movie) {
       throw new NotFound('Oh dear, I cannot find the movie to add this mood')
     }

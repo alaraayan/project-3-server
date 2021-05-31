@@ -38,6 +38,19 @@ export default function errorHandler(err, req, res, next) {
       errors,
     })
   }
+  // ? User errors
+  if (err.name === 'UsernameExists') {
+    return res.status(400).json({ message: 'This username is taken, try another' })
+  }
+  if (err.name === 'EmailExists') {
+    return res.status(400).json({ message: 'This email is taken, try another' })
+  }
+  if (err.name === 'PasswordsNotMatching') {
+    return res.status(400).json({ message: 'Make sure your passwords are matching' })
+  }
+  if (err.name === 'UserInfoMissing') {
+    return res.status(422).json({ message: 'Looks like you missed a field...' })
+  }
   
   // ? 500 means internal server error
   res.sendStatus(500)

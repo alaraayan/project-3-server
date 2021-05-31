@@ -1,14 +1,14 @@
 ### 
 
-@id = 60ad0b97465525e70f28fa3c
+@id = 60b4e8c9eb347f37f4821d25
 
 @moodId = 60ad0b97465525e70f28f9fb
 
-@addedMoodId = 60ad0b83465525e70f28f9d8
+@addedMoodId = 60b2d6fc3aa79404db286b0d
 
-@commentId = 60ad0dfa7ea7b5e73f19c336
+@commentId = 60b0fd8d360175615b40a62d
 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFkMGI4MzQ2NTUyNWU3MGYyOGY5ZDAiLCJpYXQiOjE2MjIxNjYwMjMsImV4cCI6MTYyMjIwOTIyM30.BaJMCCpwiAp4ekwUcoAl4gM3FVp0bdN0hhR4t1jUD6w
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGI0ZThjMGViMzQ3ZjM3ZjQ4MjFkMGEiLCJpYXQiOjE2MjI0NzI0NzAsImV4cCI6MTYyMjUxNTY3MH0.LcVb-vGbkARlvEmWRxoUWtkGC0LzYlvfNWS82Jqsnsg
 
 
 ###
@@ -60,10 +60,10 @@ content-type: application/json
 
 {
   "genres": 0,
-  "director": ["Kevin Costner"],
-  "actors": ["Kevin Costner", "somebody else"],
-  "language": ["test"],
-  "title": "Indiana Jones and the blah",
+  "director": "umm",
+  "actors": "who",
+  "language": "test",
+  "title": "editing a movie, don't mind me",
   "year": "test",
   "rated": "test",
   "released": "test",
@@ -71,7 +71,7 @@ content-type: application/json
   "plot": "test",
   "poster": "test",
   "ratings": [{"source": "test", "value": "test"}, {"source": "test", "value": "test"}, {"source": "test", "value": "test"}],
-  "moods": [["uplifting"]]
+  "moods": [["lol"]]
 }
 
 ### 
@@ -127,7 +127,7 @@ Authorization: Bearer {{token}}
 content-type: application/json
 
 {
-  "text": "commenting once again"
+  "text": "commenting one last time?"
 }
 
 ###
