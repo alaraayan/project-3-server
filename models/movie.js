@@ -9,7 +9,7 @@ function validator(array) {
 // ? Embedded Schema
 const movieMoodSchema = new mongoose.Schema({ 
   // mood: { type: mongoose.Schema.ObjectId, ref: 'Mood', required: true, validate: [validator, 'Please add at least one mood'] },
-  mood: { type: mongoose.Schema.ObjectId, ref: 'Mood', required: true },
+  mood: { type: mongoose.Schema.ObjectId, ref: 'Mood', required: false },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 }, { 
   timestamps: true,

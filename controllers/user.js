@@ -1,10 +1,26 @@
 import User from '../models/user.js'
 import jwt from 'jsonwebtoken'
 import { secret } from '../config/environment.js'
+import { UsernameExists, EmailExists, PasswordsNotMatching, UserInfoMissing } from '../lib/errors.js'
 
 async function register(req, res, next) {
   try {
+    const existingUsername = await User.findOne({ username: req.body.username })
+    if (existingUsername){
+      throw new UsernameExists
+    }
+    const existingEmail = await User.findOne({ email: req.body.email })
+    if (existingEmail){
+      throw new EmailExists
+    }
+    if (req.body.password !== req.body.passwordConfirmation) {
+      throw new PasswordsNotMatching
+    }
+    if (!req.body.username || !req.body.email || !req.body.password || !req.body.passwordConfirmation) {
+      throw new UserInfoMissing
+    }
     const user = await User.create(req.body)
+
     res.status(201).json(user)
     console.log(user)
 
