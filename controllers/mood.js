@@ -17,26 +17,23 @@ async function index(req, res, next) {
 
 async function create(req, res, next) {
   
-  req.body.user = req.currentUser
-
   try {
-    const movie = await Movie.findById(req.params.id)
-      .populate('user')
-      .populate('moods.mood.mood')
-    if (!movie) {
-      throw new NotFound('Oh dear, I cannot find the movie to add this mood')
-    }
-    const matchedMood = await Mood.findOne({ mood: req.body.mood })
-    movie.moods.push({ 
-      mood: matchedMood,
-      user: req.currentUser,
+    const id = req.params.id
+    const movie = await Movie.findById(id)
+    const newMoods = req.body.moods.map(( mood ) => {
+      return { mood, user: req.currentUser._id }
     })
-    const savedAndUpdatedMovie = await movie.save()
-
-    res.send(savedAndUpdatedMovie)
+    newMoods.forEach(mood => movie.moods.push(mood))
+    
+    await movie.save()
+    res.status(202).json(movie)
+    
+    console.log('newMoods', newMoods)
+    console.log('movie', movie)
   } catch (e) {
-    next(e)
+    console.log(e)
   }
+  
 }
 
 async function remove(req,res, next) {
