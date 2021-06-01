@@ -430,6 +430,237 @@ export default [
   {
     'imdb': 'tt1232829',
     'moods': ['lol', 'adventurous', 'easy', 'action-packed'],
+  },
+  {
+    'imdb': 'tt4209788',
+    'moods': ['upbeat', 'thrilling'],
+  },
+  {
+    'imdb': 'tt0066011',
+    'moods': ['romantic', 'emotional'],
+  },
+  {
+    'imdb': 'tt2737050',
+    'moods': ['emotional', 'melancholy'],
+  },
+  {
+    'imdb': 'tt2053425',
+    'moods': ['emotional', 'existential', 'intense'],
+  },
+  {
+    'imdb': 'tt2056771',
+    'moods': ['playful', 'weird', 'upbeat', 'exhilarating'],
+  },
+  {
+    'imdb': 'tt5104604',
+    'moods': ['playful', 'fun', 'upbeat'],
+  },
+  {
+    'imdb': 'tt0163978',
+    'moods': ['intense', 'adventurous', 'thrilling'],
+  },
+  {
+    'imdb': 'tt2278388',
+    'moods': ['playful', 'fun', 'upbeat', 'easy', 'heart-warming'],
+  },
+  {
+    'imdb': 'tt1748122',
+    'moods': ['playful', 'fun', 'upbeat', 'easy', 'heart-warming'],
+  },
+  {
+    'imdb': 'tt1714915',
+    'moods': ['existential', 'dark', 'romantic', 'weird'],
+  },
+  {
+    'imdb': 'tt1596363',
+    'moods': ['fun', 'upbeat', 'playful'],
+  },
+  {
+    'imdb': 'tt5109784',
+    'moods': ['dark', 'intense', 'existential'],
+  },
+  {
+    'imdb': 'tt0947798',
+    'moods': ['dark', 'intense', 'mind-blowing'],
+  },
+  {
+    'imdb': 'tt0180093',
+    'moods': ['dark', 'intense', 'thought-provoking'],
+  },
+  {
+    'imdb': 'tt0964517',
+    'moods': ['emotional', 'heroic', 'thrilling'],
+  },
+  {
+    'imdb': 'tt2884018',
+    'moods': ['dark', 'existential', 'slow', 'melancholy'],
+  },
+  {
+    'imdb': 'tt0485947',
+    'moods': ['thought-provoking', 'existential', 'heart-warming', 'weird'],
+  },
+  {
+    'imdb': 'tt0172493',
+    'moods': ['dark', 'existential', 'intense', 'weird'],
+  },
+  {
+    'imdb': 'tt0301357',
+    'moods': ['heart-warming', 'easy', 'playful'],
+  },
+  {
+    'imdb': 'tt0144084',
+    'moods': ['intense', 'upbeat'],
+  },
+  {
+    'imdb': 'tt0335266',
+    'moods': ['existential', 'easy', 'slow', 'melancholy'],
+  },
+  {
+    'imdb': 'tt0422720',
+    'moods': ['easy', 'upbeat'],
+  },
+  {
+    'imdb': 'tt0159097',
+    'moods': ['existential', 'intense', 'dark'],
+  },
+  {
+    'imdb': 'tt1527186',
+    'moods': ['existential', 'melancholy', 'slow', 'dark'],
+  },
+  {
+    'imdb': 'tt1100089',
+    'moods': ['thrilling', 'dark'],
+  },
+  {
+    'imdb': 'tt0319061',
+    'moods': ['playful', 'fun', 'emotional', 'exhilarating', 'romantic', 'heart-warming', 'easy'],
+  },
+  {
+    'imdb': 'tt0887883',
+    'moods': ['weird', 'fun', 'upbeat'],
+  },
+  {
+    'imdb': 'tt1441326',
+    'moods': ['dark'],
+  },
+  {
+    'imdb': 'tt0099487',
+    'moods': ['fun', 'playful', 'emotional', 'heart-warming'],
+  },
+  {
+    'imdb': 'tt0367594',
+    'moods': ['fun', 'playful', 'upbeat', 'heart-warming'],
+  },
+  {
+    'imdb': 'tt1210166',
+    'moods': ['inspiring'],
+  },
+  {
+    'imdb': 'tt0116282',
+    'moods': ['dark', 'weird'],
+  },
+  {
+    'imdb': 'tt0109830',
+    'moods': ['heart-warming', 'emotional', 'romantic', 'inspiring', 'exhilarating', 'playful'],
+  },
+  {
+    'imdb': 'tt0918927',
+    'moods': ['intense', 'thought-provoking'],
+  },
+  {
+    'imdb': 'tt0449467',
+    'moods': ['intense', 'emotional', 'thrilling'],
+  },
+  {
+    'imdb': 'tt2562232',
+    'moods': ['dark', 'existential'],
+  },
+  {
+    'imdb': 'tt0274558',
+    'moods': ['dark', 'existential', 'emotional'],
+  },
+  {
+    'imdb': 'tt4686844',
+    'moods': ['dark', 'upbeat', 'playful'],
+  },
+  {
+    'imdb': 'tt0381681',
+    'moods': ['romantic', 'easy'],
+  },
+  {
+    'imdb': 'tt0112471',
+    'moods': ['romantic', 'easy'],
+  },
+  {
+    'imdb': 'tt2209418',
+    'moods': ['romantic', 'easy'],
+  },
+  {
+    'imdb': 'tt0198781',
+    'moods': ['fun', 'upbeat', 'lol'],
+  },
+  {
+    'imdb': 'tt0097165',
+    'moods': ['emotional', 'soppy', 'inspiring'],
+  },
+  {
+    'imdb': 'tt0264464',
+    'moods': ['fun', 'upbeat', 'easy'],
+  },
+  {
+    'imdb': 'tt2316411',
+    'moods': ['dark', 'mind-blowing', 'intense', 'slow'],
+  },
+  {
+    'imdb': 'tt0266697',
+    'moods': ['action-packed', 'mind-blowing', 'thrilling', 'epic'],
+  },
+  {
+    'imdb': 'tt0378194',
+    'moods': ['action-packed', 'mind-blowing', 'thrilling', 'epic'],
+  },
+  {
+    'imdb': 'tt0117951',
+    'moods': ['upbeat', 'existential'],
+  },
+  {
+    'imdb': 'tt0083658',
+    'moods': ['action-packed', 'mind-blowing', 'thrilling', 'epic'],
+  },
+  {
+    'imdb': 'tt0434409',
+    'moods': ['adventurous', 'mind-blowing', 'thrilling', 'epic', 'dark'],
+  },
+  {
+    'imdb': 'tt0105236',
+    'moods': ['upbeat', 'thrilling'],
+  },
+  {
+    'imdb': 'tt0364569',
+    'moods': ['mind-blowing', 'dark', 'intense'],
+  },
+  {
+    'imdb': 'tt0119698',
+    'moods': ['heroic', 'adventurous'],
+  },
+  {
+    'imdb': 'tt1213641',
+    'moods': ['heroic', 'intense', 'emotional'],
+  },
+  {
+    'imdb': 'tt0181689',
+    'moods': ['adventurous', 'thrilling'],
+  },
+  {
+    'imdb': 'tt0212720',
+    'moods': ['emotional'],
+  },
+  {
+    'imdb': 'tt1856101',
+    'moods': ['adventurous', 'epic', 'thrilling'],
+  },
+  {
+    'imdb': 'tt0075860',
+    'moods': ['dark', 'epic', 'thrilling'],
   }
-  
 ]
