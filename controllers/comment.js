@@ -9,6 +9,7 @@ async function create(req, res, next) {
     const movie = await Movie.findById(req.params.id)
       .populate('user')
       .populate('comments.user')
+      .populate('moods.mood')
 
     if (!movie) {
       console.log('404 Not Found')
