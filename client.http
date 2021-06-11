@@ -1,14 +1,14 @@
 ### 
 
-@id = 60b0c2cffdc4791c7b865236
+@id = 60c05adc410b781f719a687d
 
-@moodId = 60ad0b97465525e70f28f9fb
+@moodId = 60c05adc410b781f719a6881
 
 @addedMoodId = 60b2d6fc3aa79404db286b0d
 
 @commentId = 60b0fd8d360175615b40a62d
 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGIwYzJjM2ZkYzQ3OTFjN2I4NjUyMWIiLCJpYXQiOjE2MjI0OTQ2MTIsImV4cCI6MTYyMjUzNzgxMn0.SP0wiA1exuFMU0h2l5cMGMMtnTDjVx1giVk4kbUVigY
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGMwNWFjYjQxMGI3ODFmNzE5YTY4NjIiLCJpYXQiOjE2MjMyMzM5MzEsImV4cCI6MTYyMzI3NzEzMX0.kLQK0HeaVTPrMdbqE6YuRIZKCdpNATiwI3oYzyhJlng
 
 
 ###
@@ -111,7 +111,7 @@ Authorization: Bearer {{token}}
 content-type: application/json
 
 {
-  "mood": "weird"
+  "mood": "lol"
 }
 
 ###
