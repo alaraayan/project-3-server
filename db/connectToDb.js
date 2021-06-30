@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { dbURL } from '../config/environment.js'
+import { dbURI } from '../config/environment.js'
 
 function connectToDb() {
   const options = {
@@ -9,7 +9,7 @@ function connectToDb() {
     useFindAndModify: false,
   }
 
-  return mongoose.connect(dbURL, options)
+  return mongoose.connect(dbURI, options)
 }
 
 

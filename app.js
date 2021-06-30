@@ -4,6 +4,7 @@
 
 import express from 'express'
 import router from './views/router.js'
+import cors from 'cors'
 
 // ? The middleware
 import logger from './middleware/logger.js' 
@@ -16,6 +17,7 @@ app.use(logger)
 
 // ? Adding new routes to express
 app.use(express.json())  // the parser that understand what json is and translates it to JS so that node can work with it
+app.use(cors())
 app.use('/api', router)
 app.use(errorHandler)
 
