@@ -4,12 +4,15 @@
 This was the second to last project at General Assembly's Software Engineering Immersive Course. We were given a week to create a full-stack application with 
 Express API to serve data from Mongo database. For the front-end we used React.
 
-As a group of three, we decided to build a Moodflix application, a website to display movies (motivated by Netflix design) but with the difference of categorizing them into moods. Additionally giving users who register the ability to add moods to each movie and search accordingly to mood.
+As a group of three, we decided to build a Moodflix application, a website to display movies (motivated by Netflix design) but with the difference of categorizing them into moods. Additionally giving users who register the ability to add moods to each movie and search according to mood.
 
 Our Deployed Version link: - https://moodflix-site.netlify.app/ 
 
 
-![Moodflix App](image/moodflix-deployed.png)
+<p>
+<img src="image/moodflix-deployed.png" alt="deployed version"/>
+</p>
+
 
 
 link to front-end [click here](https://github.com/rizwanakhtar7/project-3-client)
@@ -18,16 +21,16 @@ link to front-end [click here](https://github.com/rizwanakhtar7/project-3-client
 ## Brief
 The brief given was to :
 
-- **Build a full-stack application** - by making your own backend and your own front-end
-* **Use an Express API** to serve your data from the Mongo database
-* **Consume your API with a separate front-end** built with React
-* **Be a complete product** which most likely means multiple relationships and CRUD functionality for at least a couple of models
-* **Implement thoughtful user stories/wireframes** that are significant enough to help you know which features are core MVP and which you can cut
+- **Build a full-stack application** - by making your own backend and your own front-end.
+* **Use an Express API** to serve your data from the Mongo database.
+* **Consume your API with a separate front-end** built with React.
+* **Be a complete product** which most likely means multiple relationships and CRUD functionality for at least a couple of models.
+* **Implement thoughtful user stories/wireframes** that are significant enough to help you know which features are core MVP and which you can cut.
 * **Have a visually impressive design** 
 * **Be deployed online** so it's publicly accessible.
 
 ## Techonologies Used
-- HTML5,
+- HTML5
 - CSS3
 - React
 - JavaScript(ES6)
@@ -43,9 +46,39 @@ The brief given was to :
 
  ## Approach
  - **Wireframes / Mockups**
- As part of our sign off process, we had to talk through our wireframes, necessary models for users, models, movies and how they would relate to each other.
+ As part of our sign off process, we had to talk through our wireframes,  models for users, moods, movies and their relations in the database tables accordingly.
 
-Since our group really liked Netflix theme style we decided to make our styling motivated by that, we then created the name Moodflix to incoorporate our own idea into the app.
+Inspired by Netflix, we created the name 'Moodflix' to incoorporate our own idea into the app.
+
+We created our models together and seeded the movies using mongoose. Once completed, using trello we managed our tasks for both the backend and frontend.
+
+I was working on:
+- SecureRoute to make sure users with the correct roles can access certain components.
+- Navbar / SideNav.
+- Error page Styling - 404 & unauthorized components.
+- Movie Index component.
+- Endpoint - getting all movies by mood and controller to handle logic for this.
+- Loading / Spinner functionality with error codes.
+- Filtering movies by mood.
+
+Alara was working on:
+- Edit a movie as Admin.
+- Edit movie form styling.
+- Adding and Deleting a mood.
+- Log in/Register page styling and component.
+- Deleting movie as Admin.
+- Token Authentication.
+- Movie details page.
+
+Chloe was working on:
+- Home Component and Hero Component.
+- Confirmation of new movie added.
+- Styling for components on different pages, button, search styling.
+- Validation errors.
+- Search Component.
+- Adding film.
+
+Although we had our responsibilities, we would still be willing to help each other for any urgent bugs and when each of us was stuck.
 
 ![Movies Index](image/movies-index.png)
 
@@ -55,6 +88,7 @@ Since our group really liked Netflix theme style we decided to make our styling 
 We began our application by working on the models for the users, movies and moods and how they would interact with each other. Additionally understanding how we would get the data back as JSON and use this to add our moods was another challenge we had to reflect on.
 
 We created all the necessary fields for movies such as:
+
 ```  imdb: { type: String, required: false, unique: true, validate: [validator, 'Please add the IMDb ID']  },
   title: { type: String, required: true, unique: true, validate: [validator, 'Please add the movie title']  },
   year: { type: String, required: true, validate: [validator, 'Please add the release year']  },
@@ -77,7 +111,8 @@ ratings: { type: [ratingsSchema], required: true, validate: [validator, 'Please 
   comments: { type: [commentSchema], required: false },
 ```
 
-After this we could successfully implement the controllers and test out all the endpoints which then could be consumed by the front end. Along with the Models for the project, I worked on implementing the all movies , all movie by moods making sure this bought back the correct data.
+Testing the endpoints was crucial before jumping onto the frontend.
+I worked on implementing the movies index endpoint , all movie by moods making sure this bought back the correct data. Chloe worked on the search, post moods/movies routes and Alara on the register, login routes along with the comment routes and deleting movies, moods. Great team dynamics and time-management enabled us to move swiftly through the complex backend and work on it in smaller, manageable steps. Also we had great organisation making sure we were getting up to date and resolving our merge conflicts on git 3 times a day. One in the morning when we met, one at lunch and one before leaving for the day.
 
 ```
 async function showMoviesByMood(req, res, next) {
@@ -102,10 +137,26 @@ async function index(req, res, next) {
 }
 ```
 
+Followed by adding this to the router.js file to ensure the request was hooked up to the correct url parameters:
+
+```
+// * Get all moods
+router.route('/moods')
+  .get(moodController.index)
+```
+
+```
+// ! Movie routes
+// * Get movies, add a movie 
+router.route('/movies')
+  .get(movieController.index)
+  .post(secureRoute, movieController.create)
+```
 
 
-### Building the Front-end 
-When we moved onto the front-end, we decided to split up to perform individual tasks and collaborate if we needed any help / or found bugs. I decided to work on the Navbar and useState to implement the sideNav bar along with Authentication to make sure the users can only view certain pages when logged in. I used conditional rendering to achieve this :
+
+### Building the front-end 
+When we moved onto the front-end, I worked on the navbar and sidenav using react hooks along with authentication to make sure only admins can view adding a movie component pages and correctly rendering logging out when on the navbar when logged in. I used conditional rendering to achieve this :
 
 ```
   <div className={sidebarShow ? 'side-nav-menu-container active' : 'side-nav-menu-container'}>
@@ -133,14 +184,9 @@ When we moved onto the front-end, we decided to split up to perform individual t
 
       The isLoggedIn will return a boolean, when this is true it will display Links to new movies to adding new movies and Logout links. 
 
-    Alongside this I used React.useState to open and close sidenav accordingly
+  
 
-    ```
-      const [sidebarShow, setSidebarShow] = useState(false)
-
-    ```
-
-    When it came to the movies index - I displayed the movies on the page using useState and useEffect to make an axios request and display movies accordingly
+    After completing this I moved onto the movies index - I displayed the movies on the page using useState and useEffect to make an axios request and display movies accordingly
 
     ```
     React.useEffect(() => {
@@ -168,8 +214,7 @@ const filteredMovies = movies?.filter(movie => {
   }).sort(sortingFunctions.alphabetical)
   
   ```
-
-  Which ever movie was then bought back using handleClick to manipute the user clicking the mood buttons,I used this new filtered array to map through and display on the page accordingly:
+  I used a map and filtered array methods to correctly apply the filter functionality so when a user clicked on for example 'lol' category, movies associated with this mood would be displayed according to this.
 
   ```
     <div className="movies-container">
@@ -200,21 +245,32 @@ const quotes = [
 
   This made the website alot more interactive, and a fun experience for the user.
 
+  Alara was working on the comments functionality along with login, register, adding moods functionality and individual movies page and styling.
+
+  Chloe worked on the home and hero components, search functionality, adding a movie to the database along with the styling for this.
+
 
 ### Wins and Challenges
-I had alot of fun developing this project and learnt a great deal about full stack development. I become comfortable with models in mongoose, seeding data, creating and testing endpoints to manipulate data and most importantly we had amazing team dynamics which allowed us to sail through the week. Although we had alot of trouble with the backend as it was interacting alot of moving parts, we jumped on together as a team to resolve any bugs and help each other when faced with diffculty.
-In terms of front end I become comfortable consuming requests from the back end, understanding how to manipulate Array methods to display data as required. I was working on the Navbar component and making sure login and logout worked and displayed correctly for Authenticated users. Also I spent time making sure users can securely navigate around the website.Also working on the movies index and displaying the moods with this too and filtering by mood. Finally I created unauthroized pages to direct the user accordingly with 404 pages, adding our own touch of random quotes when the user would accidentally land on this page.
+I had alot of fun developing this project and learnt a great deal about full-stack development. I become comfortable with models in mongoose, seeding data, creating and testing endpoints to manipulate data and most importantly we had amazing team dynamics which allowed us to sail through the tasks. Although we had alot of trouble with the backend as it was interacting alot of moving parts, we jumped on together as a team to resolve any bugs and help each other when faced with diffculty.
+In terms of frontend I became comfortable consuming requests from the backend, understanding how to manipulate different array methods to display data as required. 
 
 
 ### Stretch Goals
 Although we successfully reached MVP we had some stretch goals we wanted to implement such as :
-- Mood Quiz - functionality to quiz the user about how they feel and list movies according to the quiz result or if we found a mood such as depressed / down, to help flip it to positive for the user by listing funny comedies for example.
-- I wanted to also try to implement a playlist of favourite movies in relation to each user. They would be able to select there favorites and create a playlist accordingly. Also a seen movie button in the front-end to personalise it for each user.
 
+- Mood Quiz - quiz the user about how they feel and list movies according to what users enter in form or if we found a mood such as depressed / down, to  flip it to positive for the user by listing funny comedies for example.
 
+- I wanted to also try to implement a playlist of favourite movies in relation to each user. They would be able to select there favorite movie and create a playlist accordingly. Also a seen movie button in the front-end to personalise it for each user.
 
+### Key Learnings 
+- This was the first GA project where I learnt how to work on different branches and resolve merge conflicts together using Git.
 
+- Learnt how both the front-end and back-end connected together and how they talk to each other.
 
+- Working in a team and making sure targets are met daily.
 
+- Using map and filter array methods to render data required in the frontend from the backend. 
 
+### Bugs
+No Bugs found during testing 
 
