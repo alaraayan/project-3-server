@@ -4,7 +4,7 @@
 This was the second to last project at General Assembly's Software Engineering Immersive Course. We were given a week to create a full-stack application with 
 Express API to serve data from Mongo database. For the front-end we used React.
 
-As a group of three, we decided to build a Moodflix application, a website to display movies (motivated by Netflix design) but with the difference of categorizing them into moods. Additionally giving users who register the ability to add moods to each movie and search according to mood.
+As a group of three, Chloe, Alara and I decided to build a Moodflix application, a website to display movies (motivated by Netflix design) but with the difference of categorizing them into moods. Additionally giving users who register the ability to add moods to each movie and search according to mood.
 
 Our Deployed Version link: - https://moodflix-site.netlify.app/ 
 
@@ -20,13 +20,12 @@ link to front-end [click here](https://github.com/rizwanakhtar7/project-3-client
 
 ## Brief
 The brief given was to :
-
 - **Build a full-stack application** - by making your own backend and your own front-end.
 * **Use an Express API** to serve your data from the Mongo database.
 * **Consume your API with a separate front-end** built with React.
 * **Be a complete product** which most likely means multiple relationships and CRUD functionality for at least a couple of models.
 * **Implement thoughtful user stories/wireframes** that are significant enough to help you know which features are core MVP and which you can cut.
-* **Have a visually impressive design** 
+* **Have a visually impressive design**. 
 * **Be deployed online** so it's publicly accessible.
 
 ## Techonologies Used
@@ -48,9 +47,12 @@ The brief given was to :
  - **Wireframes / Mockups**
  As part of our sign off process, we had to talk through our wireframes,  models for users, moods, movies and their relations in the database tables accordingly.
 
-Inspired by Netflix, we created the name 'Moodflix' to incoorporate our own idea into the app.
+Inspired by Netflix, we created the name 'Moodflix' to incorporate our own idea into the app.
 
-We created our models together and seeded the movies using mongoose. Once completed, using trello we managed our tasks for both the backend and frontend.
+We created our models together and seeded the movies using mongoose. Once completed, using Trello we managed our tasks for both the backend and frontend.
+
+![Trello Board](image/trello-pic.png)
+
 
 I was working on:
 - SecureRoute to make sure users with the correct roles can access certain components.
@@ -157,7 +159,6 @@ router.route('/movies')
 
 ### Building the front-end 
 When we moved onto the front-end, I worked on the navbar and sidenav using react hooks along with authentication to make sure only admins can view adding a movie component pages and correctly rendering logging out when on the navbar when logged in. I used conditional rendering to achieve this :
-
 ```
   <div className={sidebarShow ? 'side-nav-menu-container active' : 'side-nav-menu-container'}>
         <ul className="navbar-content-container" onClick={handleSideBar}>
@@ -183,8 +184,6 @@ When we moved onto the front-end, I worked on the navbar and sidenav using react
       ```
 
       The isLoggedIn will return a boolean, when this is true it will display Links to new movies to adding new movies and Logout links. 
-
-  
 
     After completing this I moved onto the movies index - I displayed the movies on the page using useState and useEffect to make an axios request and display movies accordingly
 
@@ -257,7 +256,6 @@ In terms of frontend I became comfortable consuming requests from the backend, u
 
 ### Stretch Goals
 Although we successfully reached MVP we had some stretch goals we wanted to implement such as :
-
 - Mood Quiz - quiz the user about how they feel and list movies according to what users enter in form or if we found a mood such as depressed / down, to  flip it to positive for the user by listing funny comedies for example.
 
 - I wanted to also try to implement a playlist of favourite movies in relation to each user. They would be able to select there favorite movie and create a playlist accordingly. Also a seen movie button in the front-end to personalise it for each user.
@@ -272,5 +270,5 @@ Although we successfully reached MVP we had some stretch goals we wanted to impl
 - Using map and filter array methods to render data required in the frontend from the backend. 
 
 ### Bugs
-No Bugs found during testing 
+No bugs found during testing. 
 
