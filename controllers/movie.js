@@ -59,14 +59,6 @@ async function create(req, res, next) {
 async function update(req, res, next) {
 
   try {
-    req.body.moods = await Promise.all(req.body.moods.map(async (moodString) => {
-      const matchedMood = await Mood.findOne({ mood: moodString })
-    
-      return { 
-        mood: matchedMood,
-        user: req.currentUser,
-      }
-    }))
 
     const isAdmin = req.currentUser.isAdmin
     const movie = await Movie.findById(req.params.id)
@@ -90,7 +82,6 @@ async function update(req, res, next) {
 async function remove(req, res, next) {
   try {
     const isAdmin = req.currentUser.isAdmin
-    // console.log('isAdmin', isAdmin)
     const movie = await Movie.findById(req.params.id)
 
     if (!movie) {
