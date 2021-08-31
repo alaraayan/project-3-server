@@ -1,5 +1,3 @@
-// ? The server to run express app.
-
 import app from './app.js'
 import connectToDb from './db/connectToDb.js'
 import { port } from './config/environment.js'

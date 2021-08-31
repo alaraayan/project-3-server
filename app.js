@@ -1,23 +1,16 @@
-
-// ? This file is for setting my express app before I run it.
-// ? With everything it needs. (Create and setup my express app)
-
 import express from 'express'
-import router from './views/router.js'
 import cors from 'cors'
 
-// ? The middleware
+// import connectToDb from './db/connectToDb.js'
 import logger from './middleware/logger.js' 
+import router from './views/router.js'
 import errorHandler from './middleware/errorHandler.js'
 
-// ! This lets express handle json POSTs
 const app = express()
 
-app.use(logger)
-
-// ? Adding new routes to express
-app.use(express.json())  // the parser that understand what json is and translates it to JS so that node can work with it
+app.use(express.json())  
 app.use(cors())
+app.use(logger)
 app.use('/api', router)
 app.use(errorHandler)
 
