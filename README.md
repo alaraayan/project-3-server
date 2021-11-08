@@ -41,7 +41,7 @@ The brief given was to:
 - CSS3 and Sass
 - React.js
 - JavaScript(ES6)
-- Dependencies installed: react-router-dom, react-select, react-toastify, react-loader-spinner
+- Dependencies installed: react-router-dom, react-select, react-toastify, react-loader-spinner, hamburger-react
 - [TMDB API](https://api.themoviedb.org/)
 
 **Backend**
