@@ -67,7 +67,7 @@ We always knew what everyone was doing and although we worked solo most of the t
 
 Another crucial aspect I believe was the planning. Chloe has experience working as a project manager and that helped tremendously to keep things organised with tools like Trello. This was the first GA project where I learnt how to work on different branches and resolve merge conflicts together using Git.
 
-But the biggest lesson I learned during this project is to not be afraid to alter my code. I realised, intrinsically I tend to alter my code rather than take a step back and rethink my approach. The moods and editing a movie functionality really thought me how to check with myself whether I need a new angle or not and I find this incredibly valuable.</p>
+But the biggest lesson I learned during this project is to not be afraid to alter my code. I realised, intrinsically I tend to alter my code rather than take a step back and rethink my approach. The moods and editing a movie functionality really taught me how to check with myself whether I need a new angle or not and I find this incredibly valuable.</p>
 
 ## Future Features
 
