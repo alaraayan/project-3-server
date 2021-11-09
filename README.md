@@ -1,11 +1,12 @@
 # Project-3: Moodflix 
 
+#### General Assembly SEI Project-3 | Moodflix | Full-stack MERN app | 10-day sprint | 3-person team
 
 Deployed version of our app: - https://ga-moodflix.netlify.app/ 
 
 To access all of the features you can login with the following credentials:
 
-email: admin@email.com password: password
+**email:** admin@email.com **password:** password
 
 
 <p>
