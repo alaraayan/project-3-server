@@ -1,4 +1,4 @@
-# <img src="src/assets/images/moodflix-logo.png" alt="moodflix logo" style="width:70px"/>  Project-3: Moodflix 
+# <img src="images/moodflix-logo.png" alt="moodflix logo" style="width:70px"/>  Project-3: Moodflix 
 
 #### General Assembly SEI Project-3 | Moodflix | Full-stack MERN app | 10-day sprint | 3-person team
 
