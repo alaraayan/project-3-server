@@ -16,14 +16,14 @@ To access all of the features you can login with the following credentials:
 ## Overview 
 This was our second to last project at General Assembly's Software Engineering Immersive Course. As a group we were tasked with building a full-stack application of our choice.
 
-Inspired by the amount of time we spent on Netflix trying to find something to watch only to choose the wrong movie, we decided sometimes indexing movies based on their genre was just not enough. Moodflix is centered around choosing movies based on your current mood. 
+Inspired by the amount of time we spend on Netflix trying to find something to watch, only to choose something out of frustration in the end and get disappointed, we decided sometimes indexing movies based on their genre was just not enough. And Moodflix was born. Moodflix is centered around choosing movies based on your current mood. 
 
 To access the frontend repository please [click here.](https://github.com/alaraayan/sei-project-3-frontend)
 
 ## Collaborators
 
-* Chloe Brown - [/chloebuilds](https://github.com/chloebuilds)
-* Rizwan Akhtar - [/rizwanakhtar7](https://github.com/rizwanakhtar7)
+* Chloe Brown - [@chloebuilds](https://github.com/chloebuilds)
+* Rizwan Akhtar - [@rizwanakhtar7](https://github.com/rizwanakhtar7)
 
 
 ## Brief
@@ -62,19 +62,18 @@ The brief given was to:
 ## Process
 
 #### Planning
-Our group worked well from the get-go, we each had strengths that complimented one another. Having a Trello board to keep things organised worked very well for us. 
+Our group worked well from the get-go, we each had strengths that complimented one another. We first planned all the features we wanted Moodflix to have, decided on which were stretch goals and which were must-haves. We then tackled the backend and only once we were all finished with our backend tasks, we moved on to the frontend. We made the decision to mainly stick to the same features and work on similar tasks on both the backend and the frontend. For example, I handled user endpoints in the backend and then worked on the register and login components in the frontend. Having a Trello board to keep things organised also worked very well for us. 
 
 ###### Our Trello board:
 <img src="images/moodflix-trello.png" alt="trello board"/>
 <hr>
-We first planned all the features we wanted Moodflix to have, defined which were stretch goals and which were must-haves. We then tackled the backend and only once we were all finished with our backend tasks, we moved on to the frontend. Although the nature of the projecte made the decision to mainly stick to the same features, for example I handled user endpoints in the backend and also worked on the register and login components in the frontend. 
 
-We started every day with a mini group standup, stayed on Zoom for the rest of the day to help us when needed and took breaks together. At the end of each day we merged our Git branches and went over the Trello board, setting and assigning tasks for the next day.These little practices helped us stay on top of who was doing what and created an environment where we were autonomous enough to work on our own and still collaborated as a team.
+We started every day with a mini group standup, stayed on Zoom for the rest of the day to help each other when needed and took breaks at the same time together to have a synced rhythm. At the end of each day we merged our Git branches and went over the Trello board, setting and assigning tasks for the next day. These little practices helped us stay on top of who was doing what and created an environment where we were autonomous enough to work on our own and still collaborated as a one unit team.
 
 #### Backend
-Before moving on to the frontend, we wanted to make sure everything was working as we planned in the backend. We divided up the tasks and would test regularly after merging our branches together. 
+Before moving on to the frontend, we wanted to make sure everything was working as we planned in the backend. We divided up the tasks and tested regularly after merging our branches together. 
 
-I was in charge of the User model and handled the register and login endpoints. As we had two types of users -admin and general- I also handled user related functionalities such as adding, deleting and editing movies and moods. Our user model looked like this:
+I was in charge of the user model and handled the register and login endpoints. As we had two types of users -admin and general- I also handled user related functionalities such as adding, deleting and editing movies and moods. Our user model looked like this:
 
 ```javascript
 const userSchema = new mongoose.Schema({
@@ -85,9 +84,9 @@ const userSchema = new mongoose.Schema({
 })
 ```
 
-Every movie we seeded was assigned to the admin user. We wanted to have control over the content on Moodflix and limited a user's abilities accordingly. Logged in users can add a movie to the database, leave a comment on a movie, add moods to an existing movie and only delete the moods they've added. Editing and deleting movies are only allowed for admin users who also have the ability to edit moods regardless of ownership.  
+Every movie we seeded was assigned to the admin user. We wanted to have control over the content on Moodflix and limited a user's abilities accordingly. Logged in users can add a movie to the database, leave a comment on a movie, add moods to an existing movie and only delete the moods they've added. Editing and deleting movies are only allowed for admin users who also have the ability to edit moods regardless who has originally added them.  
 
-We handled a lot of these in the frontend but made sure we added the necessary validation in the backend as well. For example, the authorisation part of removing a comment looks like this:
+We handled a lot of these in the frontend but made sure we added the necessary validations in the backend as well. For example, the authorisation part of removing a comment looks like this:
 
 ``` javascript
 async function remove(req,res, next) {
@@ -106,11 +105,11 @@ async function remove(req,res, next) {
 }
 ```
 #### Frontend
-After completing our backend we moved on to the frontend as a group. Continuing with the general areas we handled in the backend, we each chose our components. Since I handled users in the backend, I took user related functionalities which were register and login, comments, movie show page, editing a movie and adding/removing moods from an existing movie. I had to make sure every type of user was seeing the right content relevant to them.
+After completing our backend we moved on to the frontend as a group. Continuing with the general areas we handled in the backend, we each chose our components. Since I handled users in the backend, I took user related functionalities which were register and login, comments, movie show page, editing a movie and adding/removing moods from an existing movie. I had to make sure every type of user was seeing content relevant to them.
 
-Being more comfortable by now with React, I took advantage of breaking things down to components and conditionally rendering different JSX depending a user's status. 
+Being more comfortable with React since the last project, I took advantage of breaking things down to components and conditionally rendering the JSX depending a user's status. 
 
-While everyone on a movie's show page saw its information, admin users had the ability to edit and remove it like this:
+While everyone on a movie's show page saw its information, admin users had the ability to edit and remove the movie like this:
 
 ``` javascript
 {isLoggedIn && isAdmin() && (
@@ -135,13 +134,13 @@ While everyone on a movie's show page saw its information, admin users had the a
   </>
 )}
 ```
-Modeled after Netflix, Moodflix's styling choices were relatively easy. We kept the things we liked as users of Netflix and changed the ones we didn't -the movie show page doesn't have a dark theme as we wanted to keep this part of the website light and inviting-.
+Modeled after Netflix, Moodflix's styling choices were relatively easy. We kept the things we liked as users of Netflix and changed the ones we didn't. For example, the movie show page doesn't have a dark theme as we wanted to keep this part of the site light.
 
 ## Screenshots
 ###### The hero component shows a different movie each time:
 <img src="images/hero.gif" alt="hero"/>
 
-###### User adds moods to an existing movie:
+###### Logged in user adds moods to an existing movie:
 <img src="images/add-moods.gif" alt="user adding moods"/>
 
 ###### Admin user edits a movie:
@@ -151,11 +150,13 @@ Modeled after Netflix, Moodflix's styling choices were relatively easy. We kept 
 <img src="images/filter-movies.gif" alt="user filtering movies index"/>
 
 ## Challenges
-The biggest challenge for the was figuring out how to manage editing the moods -adding and removing- of an existing movie. Initially I thought of this functionality would be just like comments and handled the backend with ease. However because we were fetching our data from an external API and then seeding with it, needed to know which user added which mood to which movie this proved to be a tricky task. I wanted a mood to be moved from one section to the other once selected and first achieved this by pushing all selections to a new array. This allowed me to be able to add all the moods to the movie once the form was submitted. 
+The biggest challenge I had was figuring out how to manage changing the moods -adding and removing- of an existing movie. Initially I thought this functionality would be just like comments and handled the backend with ease. However, because we were fetching our data from an external API and then seeding with the added moods and we needed to know which user added which mood to which movie, this proved to be a tricky task once we took the project full stack.
 
-Removing the moods was a different set of challenges though. Because a user could add three moods to a movie and then go back, remove two of them and add four more all at once. I had to find a way to handle all of these events in one form submission. 
+In terms of UX, I wanted a mood to be moved from one section to the other once selected and first achieved this by pushing all newly selected moods to a new array. This allowed me to be able to add all the moods to the movie once the form was submitted. 
 
-The eureka moment came when I realised just because the user was clicking a button to submit the new moods, I didn't have to submit them then and there. This changed my entire perspective on the problem and the end result was much cleaner code where the new and updated movie moods are submitted each and every time the user clicks on a mood. The button that used to submit the moods is now only there for UX purposes, it has zero actual functionality.
+Removing the moods was a different set of challenge. Because a user could add three moods to a movie and then go back, remove two of them and add four more all at once. I had to find a way to handle all of these events in one form submission. 
+
+The eureka moment came when I realised just because the user was clicking a button to submit the new moods, I didn't have to submit them then and there. This changed my entire perspective on the problem and the end result was much cleaner code where the new and updated movie moods are submitted each and every time the user clicks on a mood. The button that used to submit the moods is now only there for UX purposes, it has no actual functionality.
 
 ###### A mood is added to the movie as soon as the user clicks on it:
 ``` javascript
@@ -188,9 +189,7 @@ The eureka moment came when I realised just because the user was clicking a butt
 ```
 
 ## Wins
-We put a lot of effort in the user experience whether it was using icons wherever possible, good error messages or automatically logging in a user after registration. As users of the internet we all had good and bad experiences on a website and we worked hard to make sure that's not the case for Moodflix. We wanted it to be enjoyable to browse and use and I believe we have achieved that. 
-
-This project for me was filled with many wins. I am particularly proud of our error handling, there are no gaps for users to take advantage of or get lost and frustrated, prompting them to leave the site. 
+This project for me was filled with many wins. We put a lot of effort in the user experience of this project, whether it was using icons wherever possible, having clear error messages or automatically logging in a user after registration. As users of the internet we all had good and bad experiences with websites and we worked hard to make sure that's not the case with Moodflix. We wanted it to be enjoyable to use and I believe we have achieved that. 
 
 As a user I don't like it when I'm not logged in after registering and wanted to make sure that's not the case for Moodflix. 
 
@@ -213,7 +212,7 @@ function Register() {
     }
   }
 ```
-Another UX related win for me was the comments, I am really proud of the way they look and function. A relatively small but important win for me. 
+Another UX related win for me was the comments, I am really proud of the way they look and function. A relatively small but important win. 
 
 <img src="images/comments.png" alt="comments in a movie"/>
 
