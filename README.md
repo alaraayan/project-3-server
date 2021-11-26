@@ -36,7 +36,7 @@ The brief given was to:
 * **Have a visually impressive design**. 
 * **Be deployed online** so it's publicly accessible.
 
-## Techonologies Used
+## Technologies Used
 **Frontend**
 - HTML5
 - CSS3 and Sass
@@ -62,7 +62,7 @@ The brief given was to:
 ## Process
 
 #### Planning
-Our group worked well from the get-go, we each had strengths that complimented one another. We first planned all the features we wanted Moodflix to have, decided on which were stretch goals and which were must-haves. We then tackled the backend and only once we were all finished with our backend tasks, we moved on to the frontend. We made the decision to mainly stick to the same features and work on similar tasks on both the backend and the frontend. For example, I handled user endpoints in the backend and then worked on the register and login components in the frontend. Having a Trello board to keep things organised also worked very well for us. 
+Our group worked well from the get-go, we each had strengths that complement one another. We first planned all the features we wanted Moodflix to have, decided on which were stretch goals and which were must-haves. We then tackled the backend and only once we were all finished with our backend tasks, we moved on to the frontend. We made the decision to mainly stick to the same features and work on similar tasks on both the backend and the frontend. For example, I handled user endpoints in the backend and then worked on the register and login components in the frontend. Having a Trello board to keep things organised also worked very well for us. 
 
 ###### Our Trello board:
 <img src="images/moodflix-trello.png" alt="trello board"/>
@@ -107,7 +107,7 @@ async function remove(req,res, next) {
 #### Frontend
 After completing our backend we moved on to the frontend as a group. Continuing with the general areas we handled in the backend, we each chose our components. Since I handled users in the backend, I took user related functionalities which were register and login, comments, movie show page, editing a movie and adding/removing moods from an existing movie. I had to make sure every type of user was seeing content relevant to them.
 
-Being more comfortable with React since the last project, I took advantage of breaking things down to components and conditionally rendering the JSX depending a user's status. 
+Being more comfortable with React since the last project, I took advantage of breaking things down to components and conditionally rendering the JSX depending on a user's status. 
 
 While everyone on a movie's show page saw its information, admin users had the ability to edit and remove the movie like this:
 
@@ -154,7 +154,7 @@ The biggest challenge I had was figuring out how to manage changing the moods -a
 
 In terms of UX, I wanted a mood to be moved from one section to the other once selected and first achieved this by pushing all newly selected moods to a new array. This allowed me to be able to add all the moods to the movie once the form was submitted. 
 
-Removing the moods was a different set of challenge. Because a user could add three moods to a movie and then go back, remove two of them and add four more all at once. I had to find a way to handle all of these events in one form submission. 
+Removing the moods was a different set of challenges. Because a user could add three moods to a movie and then go back, remove two of them and add four more all at once. I had to find a way to handle all of these events in one form submission. 
 
 The eureka moment came when I realised just because the user was clicking a button to submit the new moods, I didn't have to submit them then and there. This changed my entire perspective on the problem and the end result was much cleaner code where the new and updated movie moods are submitted each and every time the user clicks on a mood. The button that used to submit the moods is now only there for UX purposes, it has no actual functionality.
 
@@ -189,7 +189,7 @@ The eureka moment came when I realised just because the user was clicking a butt
 ```
 
 ## Wins
-This project for me was filled with many wins. We put a lot of effort in the user experience of this project, whether it was using icons wherever possible, having clear error messages or automatically logging in a user after registration. As users of the internet we all had good and bad experiences with websites and we worked hard to make sure that's not the case with Moodflix. We wanted it to be enjoyable to use and I believe we have achieved that. 
+This project for me was filled with many wins. We put a lot of effort into the user experience of this project, whether it was using icons wherever possible, having clear error messages or automatically logging in a user after registration. As users of the internet we all had good and bad experiences with websites and we worked hard to make sure that's not the case with Moodflix. We wanted it to be enjoyable to use and I believe we have achieved that. 
 
 As a user I don't like it when I'm not logged in after registering and wanted to make sure that's not the case for Moodflix. 
 
