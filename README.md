@@ -70,6 +70,11 @@ Our group worked well from the get-go, we each had strengths that complement one
 
 We started every day with a mini group standup, stayed on Zoom for the rest of the day to help each other when needed and took breaks at the same time together to have a synced rhythm. At the end of each day we merged our Git branches and went over the Trello board, setting and assigning tasks for the next day. These little practices helped us stay on top of who was doing what and created an environment where we were autonomous enough to work on our own and still collaborated as a one unit team.
 
+#### Work Split
+We divided up the features vertically. We chose our areas before we started with the backend and continued with the same ones throughout the project. Chloe handled movie related functionalities such as adding a new movie or getting all movies and seeding the database. Rizwan worked on getting all movies by mood and handled filtering movies by mood when we transitioned to frontend. We were then responsible for creating the model and related controllers for our selected functionalities. 
+
+Because I was working on user related functionalities; authentication, movie detail page and register/login components as well as comments and users adding moods to a movie fell under my responsibilities. All three of us really enjoyed this vertical approach as it gave us a real sense of ownership.
+
 #### Backend
 Before moving on to the frontend, we wanted to make sure everything was working as we planned in the backend. We divided up the tasks and tested regularly after merging our branches together. 
 
