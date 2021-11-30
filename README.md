@@ -253,7 +253,7 @@ But the biggest lesson I learned during this project is to not be afraid to alte
 ## Future Features
 
 If we had more time on this project we would add:
-- Responsiveness
-- Ability for a user to like a movie / add a movie to watchlist
-- A profile page for the user
+- Responsiveness.
+- Ability for a user to like a movie / add a movie to watchlist.
+- A profile page for the user.
 
