@@ -53,7 +53,7 @@ async function login(req, res, next) {
     res.status(202).json({ message: 'Login successful', token, isAdmin })
 
   } catch (e) {
-    next(encodeURIComponent)
+    next(e)
   }
 }
 
